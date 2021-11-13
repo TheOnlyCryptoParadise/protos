@@ -1,15 +1,15 @@
-syntax = "proto2";
+syntax = "proto3";
 package candles;
 
 message Candle {
-  required string exchange = 1;
-  required string pair = 2;
-  required string size = 3;
-  required double open = 4;
-  required double high = 5;
-  required double low = 6;
-  required double close = 7;
-  required double volume = 8;
-  required int64 timestamp = 9;
+  string exchange = 1;
+  string pair = 2;
+  string size = 3;
+  double open = 4;
+  double high = 5;
+  double low = 6;
+  double close = 7;
+  double volume = 8;
+  int64 timestamp = 9;
 
 }
