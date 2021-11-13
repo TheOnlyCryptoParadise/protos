@@ -1,0 +1,113 @@
+syntax = "proto3";
+// to generate Python code from proto: python -m grpc_tools.protoc -I./proto_buf --python_out=./src/grpc_generated --grpc_python_out=./src/grpc_generated ./proto_buf/bot_manager.proto --proto_path=proto_buf/
+/**
+Communication to Bot Manager (server) from API gateway (frontend).
+ */
+
+import "bot_comm.proto";
+
+service BotManagerCommunicator{
+    rpc CreateBot(CreateBotRequest) returns (CreateBotResponse) {};
+    rpc RemoveBot(BotRequest) returns (BotResponse) {};
+    rpc ResumeBot(BotRequest) returns (BotResponse) {}; //after pause
+    rpc PauseBot(BotRequest) returns (BotResponse) {};
+    rpc StopBot(BotRequest) returns (BotResponse) {};
+    rpc RenameBot(UpdateStrRequest) returns (BotResponse) {};
+    rpc UpdateBotDescription(UpdateStrRequest) returns (BotResponse) {};
+
+    rpc GetBotsStatuses(BotsDataRequest) returns (BotsStatusesResponse) {};
+    rpc GetBotsNames(BotsDataRequest) returns (BotsNamesResponse) {};
+    rpc GetBotInfo(BotRequest) returns (BotInfoResponse) {};
+    rpc GetFullInfo(BotsDataRequest) returns (FullInfoResponse) {};
+    rpc Ping(Empty) returns (Empty) {};
+
+    rpc GetBotAddress(BotRequest) returns (BotStatusAddressResponse) {};
+}
+
+
+enum BotStatus{
+  RUNNING = 0;
+  PAUSED = 1;
+  STOPPED = 2;
+}
+
+message CreateBotRequest{
+  uint64 userId = 1;
+  string botName = 2;
+  string strategyName = 3;
+  string configName = 4;
+  string description = 5;
+  bool postponeStart = 6;
+}
+
+message UpdateStrRequest{
+  uint64 botId = 1;
+  string newStr = 2;
+}
+
+message BotRequest{
+  uint64 botId = 1;
+  // string userId = 2; // to check whether that bot belongs to this user/ but it still will be unsafe?
+}
+
+message BotsDataRequest{
+  uint64 userId = 1;
+}
+
+message CreateBotResponse{
+  uint64 botId = 1;
+  uint64 userId = 2;
+  string botName = 3;
+  OperationStatus status = 4;
+  optional string message = 5; // info about error if status == Failed
+}
+
+message BotStatusAddressResponse{
+  uint64 botId = 1;
+  BotStatus botStatus = 2;
+  string address = 3;
+  OperationStatus opStatus = 4;
+  optional string message = 5; //optional
+}
+
+message BotStatusStruct{
+  uint64 botId = 1;
+  BotStatus botStatus = 2;
+}
+
+message BotsStatusesResponse{
+  repeated BotStatusStruct botStatus = 1;
+  OperationStatus opStatus = 2;
+  optional string message = 3; //optional
+}
+
+message BotNameStruct{
+  uint64 botId = 1;
+  string botName = 2;
+}
+
+message BotsNamesResponse{
+  repeated BotNameStruct botNames = 1;
+  OperationStatus opStatus = 2;
+  optional string message = 3; //optional
+}
+
+message BotInfoResponse{
+  uint64 botId = 1;
+  uint64 userId = 2;
+  string botName = 3;
+  string strategyName = 4;
+  string configName = 5;
+  repeated string pairs = 6;
+  BotStatus botStatus = 7;
+  string creationTime = 8;
+  string description = 9;
+  optional OperationStatus opStatus = 10;
+  optional string message = 11; //optional
+}
+
+message FullInfoResponse{
+  repeated BotInfoResponse botsInfo= 1;
+  OperationStatus opStatus = 2;
+  optional string message = 3; //optional;
+}

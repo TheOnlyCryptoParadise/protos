@@ -1,0 +1,46 @@
+syntax = "proto3";
+// to generate Python code from proto: python -m grpc_tools.protoc -I./proto_buf --python_out=. --grpc_python_out=. ./proto_buf/bot_bot_manager.proto --proto_path=proto_buf\
+//js: protoc -I=. bot_bot_manager.proto --js_out=import_style=commonjs:.
+//js: protoc -I=. bot_manager.proto --grpc-web_out=import_style=commonjs,mode=grpcweb:.
+
+/**
+Communication between Bot Manager (client) and Bot (server).
+ */
+
+//package bot_bot_manager;
+import "bot_comm.proto";
+
+service BotCommunicator{
+    rpc RemoveBot(Empty) returns (BotResponse) {};
+    rpc ResumeBot(Empty) returns (BotResponse) {};
+    rpc PauseBot(Empty) returns (BotResponse) {};
+    rpc StopBot(Empty) returns (BotResponse) {};
+    rpc Ping(Empty) returns (Empty) {};
+    rpc RenameBot(RenameRequest) returns (BotResponse) {};
+
+    rpc ResponseRequestedTrade(Transaction) returns (Empty) {};
+    rpc SendOpenTrades(Transactions) returns (Empty) {};
+//    rpc GetConfigInfo(Empty) returns (ConfigInfoResponse) {};
+}
+
+message RenameRequest {
+    string newName = 4;
+}
+
+message Transaction {
+//    int64 transactionId = 1;
+    string currencyPair = 2;
+    double amount = 3;
+    double price = 4;
+    OperationStatus status = 5;
+}
+
+message Transactions {
+    repeated Transaction trades = 1;
+}
+
+//message ConfigInfoResponse{
+//    repeated string pairs = 1;
+//    optional OperationStatus opStatus = 3;
+//    optional string message = 4; //optional
+//}

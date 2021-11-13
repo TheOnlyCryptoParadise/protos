@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+
+message Empty {
+}
+
+
+enum OperationStatus {
+    SUCCESSFUL = 0;
+    FAILED = 1;
+}
+
+enum Operation{
+  REMOVE_BOT = 0;
+  RESUME_BOT = 1;
+  PAUSE_BOT = 2;
+  STOP_BOT = 3;
+  RENAME_BOT = 4;
+  UPDATE_DESCRIPTION = 5;
+
+}
+
+message BotResponse {
+    uint64 botId = 1;
+    OperationStatus status = 2;
+    Operation op = 3;
+}

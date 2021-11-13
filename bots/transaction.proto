@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+enum TransactionType{
+  BUY = 0;
+  SELL = 1;
+  STOP_LOSS_SELL = 2;
+
+}
+
+message TransactionDetails{
+  string pair = 1;
+  double amount = 2;
+  double price = 3;
+  TransactionType type = 4;
+}
+
+message Transaction{
+  uint64 botId = 1;
+  uint64 userId = 2;
+  int32 timeout = 3;
+  string exchange = 4;
+  TransactionDetails details = 5;
+}

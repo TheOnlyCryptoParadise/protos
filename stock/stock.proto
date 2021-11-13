@@ -1,0 +1,52 @@
+syntax = "proto3";
+//python -m grpc_tools.protoc -I./proto_buf --python_out=. --grpc_python_out=. ./proto_buf/stock.proto --proto_path=proto_buf\
+
+service StockCommunicator{
+  rpc AddFortune(Fortune) returns (Fortune) {};
+
+  rpc GetFortune(FortuneRequest) returns (Fortune){};
+  rpc AddTransaction(Transaction) returns (TransactionAckStatus){};
+  rpc CancelTransaction(TransactionRequest) returns (TransactionAckStatus){};
+  rpc CheckTransactionStatus(TransactionRequest) returns (TransactionAckStatus){};
+}
+
+
+message FortuneRequest {
+  uint64 userToken = 1; // userId
+}
+
+message Fortune {
+  uint64 userToken = 1; // userId
+  double fortune = 2; // maybe not float - sth more safe?
+}
+
+enum TransactionType{
+  BUY = 0;
+  SELL = 1;
+}
+
+message Transaction {
+  uint64 userToken = 1;
+  TransactionType type = 2;
+  string currencyPair = 3;
+  double amount = 4;
+  double price = 5;
+  string exchange = 6;
+}
+
+message TransactionRequest {
+  uint64 userToken = 1;
+  uint64 transactionId = 2;
+}
+
+enum TransactionStatus {
+  ACCEPTED = 0;
+  REJECTED = 1;
+  REALISED = 2;
+  CANCELLED = 3;
+}
+
+message TransactionAckStatus {
+  optional uint64 transactionId = 1;
+  TransactionStatus status = 2;
+}
