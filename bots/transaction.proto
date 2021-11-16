@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "bot_comm.proto";
+
 enum TransactionType{
   BUY = 0;
   SELL = 1;
@@ -12,6 +14,7 @@ message TransactionDetails{
   double amount = 2;
   double price = 3;
   TransactionType type = 4;
+  optional OperationStatus status = 5;
 }
 
 message Transaction{
@@ -20,4 +23,8 @@ message Transaction{
   int32 timeout = 3;
   string exchange = 4;
   TransactionDetails details = 5;
+}
+
+message Transactions {
+    repeated Transaction trades = 1;
 }

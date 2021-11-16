@@ -5,29 +5,29 @@ service StockCommunicator{
   rpc AddFortune(Fortune) returns (Fortune) {};
 
   rpc GetFortune(FortuneRequest) returns (Fortune){};
-  rpc AddTransaction(Transaction) returns (TransactionAckStatus){};
+  rpc AddTransaction(StockTransaction) returns (TransactionAckStatus){};
   rpc CancelTransaction(TransactionRequest) returns (TransactionAckStatus){};
   rpc CheckTransactionStatus(TransactionRequest) returns (TransactionAckStatus){};
 }
 
 
 message FortuneRequest {
-  uint64 userToken = 1; // userId
+  uint64 userId = 1;
 }
 
 message Fortune {
-  uint64 userToken = 1; // userId
+  uint64 userId = 1;
   double fortune = 2; // maybe not float - sth more safe?
 }
 
-enum TransactionType{
+enum StockTransactionType{
   BUY = 0;
   SELL = 1;
 }
 
-message Transaction {
-  uint64 userToken = 1;
-  TransactionType type = 2;
+message StockTransaction {
+  uint64 userId = 1;
+  StockTransactionType type = 2;
   string currencyPair = 3;
   double amount = 4;
   double price = 5;
@@ -35,7 +35,7 @@ message Transaction {
 }
 
 message TransactionRequest {
-  uint64 userToken = 1;
+  uint64 userId = 1;
   uint64 transactionId = 2;
 }
 

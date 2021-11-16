@@ -17,7 +17,6 @@ enum Operation{
   STOP_BOT = 3;
   RENAME_BOT = 4;
   UPDATE_DESCRIPTION = 5;
-
 }
 
 message BotResponse {
