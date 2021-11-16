@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15\x62ot_bot_manager.proto\x1a\x0e\x62ot_comm.proto\x1a\x11transaction.proto\" \n\rRenameRequest\x12\x0f\n\x07newName\x18\x04 \x01(\t2\xc6\x02\n\x0f\x42otCommunicator\x12#\n\tRemoveBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12#\n\tResumeBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\"\n\x08PauseBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12!\n\x07StopBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\x18\n\x04Ping\x12\x06.Empty\x1a\x06.Empty\"\x00\x12+\n\tRenameBot\x12\x0e.RenameRequest\x1a\x0c.BotResponse\"\x00\x12\x30\n\x16ResponseRequestedTrade\x12\x0c.Transaction\x1a\x06.Empty\"\x00\x12)\n\x0eSendOpenTrades\x12\r.Transactions\x1a\x06.Empty\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x15\x62ot_bot_manager.proto\x1a\x0e\x62ot_comm.proto\x1a\x11transaction.proto\" \n\rRenameRequest\x12\x0f\n\x07newName\x18\x04 \x01(\t2\xc9\x02\n\x0f\x42otCommunicator\x12#\n\tRemoveBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12#\n\tResumeBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\"\n\x08PauseBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12!\n\x07StopBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\x18\n\x04Ping\x12\x06.Empty\x1a\x06.Empty\"\x00\x12+\n\tRenameBot\x12\x0e.RenameRequest\x1a\x0c.BotResponse\"\x00\x12\x33\n\x19ResponseForRequestedTrade\x12\x0c.Transaction\x1a\x06.Empty\"\x00\x12)\n\x0eSendOpenTrades\x12\r.Transactions\x1a\x06.Empty\"\x00\x62\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,transaction__pb2.DESCRIPTOR,])
 
@@ -79,7 +79,7 @@ _BOTCOMMUNICATOR = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=95,
-  serialized_end=421,
+  serialized_end=424,
   methods=[
   _descriptor.MethodDescriptor(
     name='RemoveBot',
@@ -142,8 +142,8 @@ _BOTCOMMUNICATOR = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ResponseRequestedTrade',
-    full_name='BotCommunicator.ResponseRequestedTrade',
+    name='ResponseForRequestedTrade',
+    full_name='BotCommunicator.ResponseForRequestedTrade',
     index=6,
     containing_service=None,
     input_type=transaction__pb2._TRANSACTION,

@@ -3,8 +3,8 @@ syntax = "proto3";
 import "bot_comm.proto";
 
 enum TransactionType{
-  BUY = 0;
-  SELL = 1;
+  TO_BUY = 0;
+  TO_SELL = 1;
   STOP_LOSS_SELL = 2;
 
 }

@@ -46,8 +46,8 @@ class BotCommunicatorStub(object):
                 request_serializer=bot__bot__manager__pb2.RenameRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
-        self.ResponseRequestedTrade = channel.unary_unary(
-                '/BotCommunicator/ResponseRequestedTrade',
+        self.ResponseForRequestedTrade = channel.unary_unary(
+                '/BotCommunicator/ResponseForRequestedTrade',
                 request_serializer=transaction__pb2.Transaction.SerializeToString,
                 response_deserializer=bot__comm__pb2.Empty.FromString,
                 )
@@ -97,7 +97,7 @@ class BotCommunicatorServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ResponseRequestedTrade(self, request, context):
+    def ResponseForRequestedTrade(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -142,8 +142,8 @@ def add_BotCommunicatorServicer_to_server(servicer, server):
                     request_deserializer=bot__bot__manager__pb2.RenameRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
-            'ResponseRequestedTrade': grpc.unary_unary_rpc_method_handler(
-                    servicer.ResponseRequestedTrade,
+            'ResponseForRequestedTrade': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResponseForRequestedTrade,
                     request_deserializer=transaction__pb2.Transaction.FromString,
                     response_serializer=bot__comm__pb2.Empty.SerializeToString,
             ),
@@ -265,7 +265,7 @@ class BotCommunicator(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ResponseRequestedTrade(request,
+    def ResponseForRequestedTrade(request,
             target,
             options=(),
             channel_credentials=None,
@@ -275,7 +275,7 @@ class BotCommunicator(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/BotCommunicator/ResponseRequestedTrade',
+        return grpc.experimental.unary_unary(request, target, '/BotCommunicator/ResponseForRequestedTrade',
             transaction__pb2.Transaction.SerializeToString,
             bot__comm__pb2.Empty.FromString,
             options, channel_credentials,

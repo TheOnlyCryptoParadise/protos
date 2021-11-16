@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\",\n\x0cTransactions\x12\x1c\n\x06trades\x18\x01 \x03(\x0b\x32\x0c.Transaction*8\n\x0fTransactionType\x12\x07\n\x03\x42UY\x10\x00\x12\x08\n\x04SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x62\x06proto3'
+  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\",\n\x0cTransactions\x12\x1c\n\x06trades\x18\x01 \x03(\x0b\x32\x0c.Transaction*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x62\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,])
 
@@ -33,12 +33,12 @@ _TRANSACTIONTYPE = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='BUY', index=0, number=0,
+      name='TO_BUY', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='SELL', index=1, number=1,
+      name='TO_SELL', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -51,13 +51,13 @@ _TRANSACTIONTYPE = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=352,
-  serialized_end=408,
+  serialized_end=414,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSACTIONTYPE)
 
 TransactionType = enum_type_wrapper.EnumTypeWrapper(_TRANSACTIONTYPE)
-BUY = 0
-SELL = 1
+TO_BUY = 0
+TO_SELL = 1
 STOP_LOSS_SELL = 2
 
 
