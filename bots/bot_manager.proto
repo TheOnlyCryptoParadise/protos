@@ -45,15 +45,6 @@ message UpdateStrRequest{
   string newStr = 2;
 }
 
-message BotRequest{
-  uint64 botId = 1;
-  // string userId = 2; // to check whether that bot belongs to this user/ but it still will be unsafe?
-}
-
-message BotsDataRequest{
-  uint64 userId = 1;
-}
-
 message CreateBotResponse{
   uint64 botId = 1;
   uint64 userId = 2;

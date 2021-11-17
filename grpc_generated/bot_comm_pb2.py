@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0e\x62ot_comm.proto\"\x07\n\x05\x45mpty\"V\n\x0b\x42otResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12 \n\x06status\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x16\n\x02op\x18\x03 \x01(\x0e\x32\n.Operation*-\n\x0fOperationStatus\x12\x0e\n\nSUCCESSFUL\x10\x00\x12\n\n\x06\x46\x41ILED\x10\x01*p\n\tOperation\x12\x0e\n\nREMOVE_BOT\x10\x00\x12\x0e\n\nRESUME_BOT\x10\x01\x12\r\n\tPAUSE_BOT\x10\x02\x12\x0c\n\x08STOP_BOT\x10\x03\x12\x0e\n\nRENAME_BOT\x10\x04\x12\x16\n\x12UPDATE_DESCRIPTION\x10\x05\x62\x06proto3'
+  serialized_pb=b'\n\x0e\x62ot_comm.proto\"\x07\n\x05\x45mpty\"V\n\x0b\x42otResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12 \n\x06status\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x16\n\x02op\x18\x03 \x01(\x0e\x32\n.Operation\"\x1b\n\nBotRequest\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\"!\n\x0f\x42otsDataRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04*-\n\x0fOperationStatus\x12\x0e\n\nSUCCESSFUL\x10\x00\x12\n\n\x06\x46\x41ILED\x10\x01*p\n\tOperation\x12\x0e\n\nREMOVE_BOT\x10\x00\x12\x0e\n\nRESUME_BOT\x10\x01\x12\r\n\tPAUSE_BOT\x10\x02\x12\x0c\n\x08STOP_BOT\x10\x03\x12\x0e\n\nRENAME_BOT\x10\x04\x12\x16\n\x12UPDATE_DESCRIPTION\x10\x05\x62\x06proto3'
 )
 
 _OPERATIONSTATUS = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _OPERATIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=115,
-  serialized_end=160,
+  serialized_start=179,
+  serialized_end=224,
 )
 _sym_db.RegisterEnumDescriptor(_OPERATIONSTATUS)
 
@@ -89,8 +89,8 @@ _OPERATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=162,
-  serialized_end=274,
+  serialized_start=226,
+  serialized_end=338,
 )
 _sym_db.RegisterEnumDescriptor(_OPERATION)
 
@@ -176,10 +176,76 @@ _BOTRESPONSE = _descriptor.Descriptor(
   serialized_end=113,
 )
 
+
+_BOTREQUEST = _descriptor.Descriptor(
+  name='BotRequest',
+  full_name='BotRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='botId', full_name='BotRequest.botId', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=115,
+  serialized_end=142,
+)
+
+
+_BOTSDATAREQUEST = _descriptor.Descriptor(
+  name='BotsDataRequest',
+  full_name='BotsDataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='userId', full_name='BotsDataRequest.userId', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=144,
+  serialized_end=177,
+)
+
 _BOTRESPONSE.fields_by_name['status'].enum_type = _OPERATIONSTATUS
 _BOTRESPONSE.fields_by_name['op'].enum_type = _OPERATION
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['BotResponse'] = _BOTRESPONSE
+DESCRIPTOR.message_types_by_name['BotRequest'] = _BOTREQUEST
+DESCRIPTOR.message_types_by_name['BotsDataRequest'] = _BOTSDATAREQUEST
 DESCRIPTOR.enum_types_by_name['OperationStatus'] = _OPERATIONSTATUS
 DESCRIPTOR.enum_types_by_name['Operation'] = _OPERATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -197,6 +263,20 @@ BotResponse = _reflection.GeneratedProtocolMessageType('BotResponse', (_message.
   # @@protoc_insertion_point(class_scope:BotResponse)
   })
 _sym_db.RegisterMessage(BotResponse)
+
+BotRequest = _reflection.GeneratedProtocolMessageType('BotRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BOTREQUEST,
+  '__module__' : 'bot_comm_pb2'
+  # @@protoc_insertion_point(class_scope:BotRequest)
+  })
+_sym_db.RegisterMessage(BotRequest)
+
+BotsDataRequest = _reflection.GeneratedProtocolMessageType('BotsDataRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BOTSDATAREQUEST,
+  '__module__' : 'bot_comm_pb2'
+  # @@protoc_insertion_point(class_scope:BotsDataRequest)
+  })
+_sym_db.RegisterMessage(BotsDataRequest)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -24,3 +24,12 @@ message BotResponse {
     OperationStatus status = 2;
     Operation op = 3;
 }
+
+message BotRequest{
+  uint64 botId = 1;
+  // string userId = 2; // to check whether that bot belongs to this user/ but it still will be unsafe?
+}
+
+message BotsDataRequest{
+  uint64 userId = 1;
+}

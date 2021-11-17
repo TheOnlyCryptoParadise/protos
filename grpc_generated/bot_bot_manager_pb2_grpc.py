@@ -2,9 +2,9 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from . import bot_bot_manager_pb2 as bot__bot__manager__pb2
-from . import bot_comm_pb2 as bot__comm__pb2
-from . import transaction_pb2 as transaction__pb2
+import bot_bot_manager_pb2 as bot__bot__manager__pb2
+import bot_comm_pb2 as bot__comm__pb2
+import transaction_pb2 as transaction__pb2
 
 
 class BotCommunicatorStub(object):
