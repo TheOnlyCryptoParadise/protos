@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x62ot_manager.proto\x1a\x0e\x62ot_comm.proto\"\x89\x01\n\x10\x43reateBotRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x02 \x01(\t\x12\x14\n\x0cstrategyName\x18\x03 \x01(\t\x12\x12\n\nconfigName\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x15\n\rpostponeStart\x18\x06 \x01(\x08\"1\n\x10UpdateStrRequest\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06newStr\x18\x02 \x01(\t\"\x1b\n\nBotRequest\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\"!\n\x0f\x42otsDataRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\"\x87\x01\n\x11\x43reateBotResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x03 \x01(\t\x12 \n\x06status\x18\x04 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x05 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"\x9f\x01\n\x18\x42otStatusAddressResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1d\n\tbotStatus\x18\x02 \x01(\x0e\x32\n.BotStatus\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\"\n\x08opStatus\x18\x04 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x05 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"?\n\x0f\x42otStatusStruct\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1d\n\tbotStatus\x18\x02 \x01(\x0e\x32\n.BotStatus\"\x81\x01\n\x14\x42otsStatusesResponse\x12#\n\tbotStatus\x18\x01 \x03(\x0b\x32\x10.BotStatusStruct\x12\"\n\x08opStatus\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"/\n\rBotNameStruct\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x02 \x01(\t\"{\n\x11\x42otsNamesResponse\x12 \n\x08\x62otNames\x18\x01 \x03(\x0b\x32\x0e.BotNameStruct\x12\"\n\x08opStatus\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"\x9c\x02\n\x0f\x42otInfoResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x03 \x01(\t\x12\x14\n\x0cstrategyName\x18\x04 \x01(\t\x12\x12\n\nconfigName\x18\x05 \x01(\t\x12\r\n\x05pairs\x18\x06 \x03(\t\x12\x1d\n\tbotStatus\x18\x07 \x01(\x0e\x32\n.BotStatus\x12\x14\n\x0c\x63reationTime\x18\x08 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\t \x01(\t\x12\'\n\x08opStatus\x18\n \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x12\x14\n\x07message\x18\x0b \x01(\tH\x01\x88\x01\x01\x42\x0b\n\t_opStatusB\n\n\x08_message\"|\n\x10\x46ullInfoResponse\x12\"\n\x08\x62otsInfo\x18\x01 \x03(\x0b\x32\x10.BotInfoResponse\x12\"\n\x08opStatus\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message*1\n\tBotStatus\x12\x0b\n\x07RUNNING\x10\x00\x12\n\n\x06PAUSED\x10\x01\x12\x0b\n\x07STOPPED\x10\x02\x32\x8e\x05\n\x16\x42otManagerCommunicator\x12\x34\n\tCreateBot\x12\x11.CreateBotRequest\x1a\x12.CreateBotResponse\"\x00\x12(\n\tRemoveBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12(\n\tResumeBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12\'\n\x08PauseBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12&\n\x07StopBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12.\n\tRenameBot\x12\x11.UpdateStrRequest\x1a\x0c.BotResponse\"\x00\x12\x39\n\x14UpdateBotDescription\x12\x11.UpdateStrRequest\x1a\x0c.BotResponse\"\x00\x12<\n\x0fGetBotsStatuses\x12\x10.BotsDataRequest\x1a\x15.BotsStatusesResponse\"\x00\x12\x36\n\x0cGetBotsNames\x12\x10.BotsDataRequest\x1a\x12.BotsNamesResponse\"\x00\x12-\n\nGetBotInfo\x12\x0b.BotRequest\x1a\x10.BotInfoResponse\"\x00\x12\x34\n\x0bGetFullInfo\x12\x10.BotsDataRequest\x1a\x11.FullInfoResponse\"\x00\x12\x18\n\x04Ping\x12\x06.Empty\x1a\x06.Empty\"\x00\x12\x39\n\rGetBotAddress\x12\x0b.BotRequest\x1a\x19.BotStatusAddressResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x11\x62ot_manager.proto\x1a\x0e\x62ot_comm.proto\"\x89\x01\n\x10\x43reateBotRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x02 \x01(\t\x12\x14\n\x0cstrategyName\x18\x03 \x01(\t\x12\x12\n\nconfigName\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x15\n\rpostponeStart\x18\x06 \x01(\x08\"1\n\x10UpdateStrRequest\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06newStr\x18\x02 \x01(\t\"\x87\x01\n\x11\x43reateBotResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x03 \x01(\t\x12 \n\x06status\x18\x04 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x05 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"\x9f\x01\n\x18\x42otStatusAddressResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1d\n\tbotStatus\x18\x02 \x01(\x0e\x32\n.BotStatus\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\"\n\x08opStatus\x18\x04 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x05 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"?\n\x0f\x42otStatusStruct\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1d\n\tbotStatus\x18\x02 \x01(\x0e\x32\n.BotStatus\"\x81\x01\n\x14\x42otsStatusesResponse\x12#\n\tbotStatus\x18\x01 \x03(\x0b\x32\x10.BotStatusStruct\x12\"\n\x08opStatus\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"/\n\rBotNameStruct\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x02 \x01(\t\"{\n\x11\x42otsNamesResponse\x12 \n\x08\x62otNames\x18\x01 \x03(\x0b\x32\x0e.BotNameStruct\x12\"\n\x08opStatus\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message\"\x9c\x02\n\x0f\x42otInfoResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07\x62otName\x18\x03 \x01(\t\x12\x14\n\x0cstrategyName\x18\x04 \x01(\t\x12\x12\n\nconfigName\x18\x05 \x01(\t\x12\r\n\x05pairs\x18\x06 \x03(\t\x12\x1d\n\tbotStatus\x18\x07 \x01(\x0e\x32\n.BotStatus\x12\x14\n\x0c\x63reationTime\x18\x08 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\t \x01(\t\x12\'\n\x08opStatus\x18\n \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x12\x14\n\x07message\x18\x0b \x01(\tH\x01\x88\x01\x01\x42\x0b\n\t_opStatusB\n\n\x08_message\"|\n\x10\x46ullInfoResponse\x12\"\n\x08\x62otsInfo\x18\x01 \x03(\x0b\x32\x10.BotInfoResponse\x12\"\n\x08opStatus\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x14\n\x07message\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\n\n\x08_message*1\n\tBotStatus\x12\x0b\n\x07RUNNING\x10\x00\x12\n\n\x06PAUSED\x10\x01\x12\x0b\n\x07STOPPED\x10\x02\x32\x8e\x05\n\x16\x42otManagerCommunicator\x12\x34\n\tCreateBot\x12\x11.CreateBotRequest\x1a\x12.CreateBotResponse\"\x00\x12(\n\tRemoveBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12(\n\tResumeBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12\'\n\x08PauseBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12&\n\x07StopBot\x12\x0b.BotRequest\x1a\x0c.BotResponse\"\x00\x12.\n\tRenameBot\x12\x11.UpdateStrRequest\x1a\x0c.BotResponse\"\x00\x12\x39\n\x14UpdateBotDescription\x12\x11.UpdateStrRequest\x1a\x0c.BotResponse\"\x00\x12<\n\x0fGetBotsStatuses\x12\x10.BotsDataRequest\x1a\x15.BotsStatusesResponse\"\x00\x12\x36\n\x0cGetBotsNames\x12\x10.BotsDataRequest\x1a\x12.BotsNamesResponse\"\x00\x12-\n\nGetBotInfo\x12\x0b.BotRequest\x1a\x10.BotInfoResponse\"\x00\x12\x34\n\x0bGetFullInfo\x12\x10.BotsDataRequest\x1a\x11.FullInfoResponse\"\x00\x12\x18\n\x04Ping\x12\x06.Empty\x1a\x06.Empty\"\x00\x12\x39\n\rGetBotAddress\x12\x0b.BotRequest\x1a\x19.BotStatusAddressResponse\"\x00\x62\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _BOTSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1376,
-  serialized_end=1425,
+  serialized_start=1312,
+  serialized_end=1361,
 )
 _sym_db.RegisterEnumDescriptor(_BOTSTATUS)
 
@@ -168,70 +168,6 @@ _UPDATESTRREQUEST = _descriptor.Descriptor(
 )
 
 
-_BOTREQUEST = _descriptor.Descriptor(
-  name='BotRequest',
-  full_name='BotRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='botId', full_name='BotRequest.botId', index=0,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=228,
-  serialized_end=255,
-)
-
-
-_BOTSDATAREQUEST = _descriptor.Descriptor(
-  name='BotsDataRequest',
-  full_name='BotsDataRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='userId', full_name='BotsDataRequest.userId', index=0,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=257,
-  serialized_end=290,
-)
-
-
 _CREATEBOTRESPONSE = _descriptor.Descriptor(
   name='CreateBotResponse',
   full_name='CreateBotResponse',
@@ -292,8 +228,8 @@ _CREATEBOTRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=293,
-  serialized_end=428,
+  serialized_start=229,
+  serialized_end=364,
 )
 
 
@@ -357,8 +293,8 @@ _BOTSTATUSADDRESSRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=431,
-  serialized_end=590,
+  serialized_start=367,
+  serialized_end=526,
 )
 
 
@@ -396,8 +332,8 @@ _BOTSTATUSSTRUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=592,
-  serialized_end=655,
+  serialized_start=528,
+  serialized_end=591,
 )
 
 
@@ -447,8 +383,8 @@ _BOTSSTATUSESRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=658,
-  serialized_end=787,
+  serialized_start=594,
+  serialized_end=723,
 )
 
 
@@ -486,8 +422,8 @@ _BOTNAMESTRUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=789,
-  serialized_end=836,
+  serialized_start=725,
+  serialized_end=772,
 )
 
 
@@ -537,8 +473,8 @@ _BOTSNAMESRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=838,
-  serialized_end=961,
+  serialized_start=774,
+  serialized_end=897,
 )
 
 
@@ -649,8 +585,8 @@ _BOTINFORESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=964,
-  serialized_end=1248,
+  serialized_start=900,
+  serialized_end=1184,
 )
 
 
@@ -700,8 +636,8 @@ _FULLINFORESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1250,
-  serialized_end=1374,
+  serialized_start=1186,
+  serialized_end=1310,
 )
 
 _CREATEBOTRESPONSE.fields_by_name['status'].enum_type = bot__comm__pb2._OPERATIONSTATUS
@@ -739,8 +675,6 @@ _FULLINFORESPONSE.oneofs_by_name['_message'].fields.append(
 _FULLINFORESPONSE.fields_by_name['message'].containing_oneof = _FULLINFORESPONSE.oneofs_by_name['_message']
 DESCRIPTOR.message_types_by_name['CreateBotRequest'] = _CREATEBOTREQUEST
 DESCRIPTOR.message_types_by_name['UpdateStrRequest'] = _UPDATESTRREQUEST
-DESCRIPTOR.message_types_by_name['BotRequest'] = _BOTREQUEST
-DESCRIPTOR.message_types_by_name['BotsDataRequest'] = _BOTSDATAREQUEST
 DESCRIPTOR.message_types_by_name['CreateBotResponse'] = _CREATEBOTRESPONSE
 DESCRIPTOR.message_types_by_name['BotStatusAddressResponse'] = _BOTSTATUSADDRESSRESPONSE
 DESCRIPTOR.message_types_by_name['BotStatusStruct'] = _BOTSTATUSSTRUCT
@@ -765,20 +699,6 @@ UpdateStrRequest = _reflection.GeneratedProtocolMessageType('UpdateStrRequest', 
   # @@protoc_insertion_point(class_scope:UpdateStrRequest)
   })
 _sym_db.RegisterMessage(UpdateStrRequest)
-
-BotRequest = _reflection.GeneratedProtocolMessageType('BotRequest', (_message.Message,), {
-  'DESCRIPTOR' : _BOTREQUEST,
-  '__module__' : 'bot_manager_pb2'
-  # @@protoc_insertion_point(class_scope:BotRequest)
-  })
-_sym_db.RegisterMessage(BotRequest)
-
-BotsDataRequest = _reflection.GeneratedProtocolMessageType('BotsDataRequest', (_message.Message,), {
-  'DESCRIPTOR' : _BOTSDATAREQUEST,
-  '__module__' : 'bot_manager_pb2'
-  # @@protoc_insertion_point(class_scope:BotsDataRequest)
-  })
-_sym_db.RegisterMessage(BotsDataRequest)
 
 CreateBotResponse = _reflection.GeneratedProtocolMessageType('CreateBotResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEBOTRESPONSE,
@@ -845,8 +765,8 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1428,
-  serialized_end=2082,
+  serialized_start=1364,
+  serialized_end=2018,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateBot',
@@ -863,7 +783,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.RemoveBot',
     index=1,
     containing_service=None,
-    input_type=_BOTREQUEST,
+    input_type=bot__comm__pb2._BOTREQUEST,
     output_type=bot__comm__pb2._BOTRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -873,7 +793,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.ResumeBot',
     index=2,
     containing_service=None,
-    input_type=_BOTREQUEST,
+    input_type=bot__comm__pb2._BOTREQUEST,
     output_type=bot__comm__pb2._BOTRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -883,7 +803,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.PauseBot',
     index=3,
     containing_service=None,
-    input_type=_BOTREQUEST,
+    input_type=bot__comm__pb2._BOTREQUEST,
     output_type=bot__comm__pb2._BOTRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -893,7 +813,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.StopBot',
     index=4,
     containing_service=None,
-    input_type=_BOTREQUEST,
+    input_type=bot__comm__pb2._BOTREQUEST,
     output_type=bot__comm__pb2._BOTRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -923,7 +843,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.GetBotsStatuses',
     index=7,
     containing_service=None,
-    input_type=_BOTSDATAREQUEST,
+    input_type=bot__comm__pb2._BOTSDATAREQUEST,
     output_type=_BOTSSTATUSESRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -933,7 +853,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.GetBotsNames',
     index=8,
     containing_service=None,
-    input_type=_BOTSDATAREQUEST,
+    input_type=bot__comm__pb2._BOTSDATAREQUEST,
     output_type=_BOTSNAMESRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -943,7 +863,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.GetBotInfo',
     index=9,
     containing_service=None,
-    input_type=_BOTREQUEST,
+    input_type=bot__comm__pb2._BOTREQUEST,
     output_type=_BOTINFORESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -953,7 +873,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.GetFullInfo',
     index=10,
     containing_service=None,
-    input_type=_BOTSDATAREQUEST,
+    input_type=bot__comm__pb2._BOTSDATAREQUEST,
     output_type=_FULLINFORESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
@@ -973,7 +893,7 @@ _BOTMANAGERCOMMUNICATOR = _descriptor.ServiceDescriptor(
     full_name='BotManagerCommunicator.GetBotAddress',
     index=12,
     containing_service=None,
-    input_type=_BOTREQUEST,
+    input_type=bot__comm__pb2._BOTREQUEST,
     output_type=_BOTSTATUSADDRESSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,

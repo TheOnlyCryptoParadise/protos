@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from . import bot_comm_pb2 as bot__comm__pb2
-from . import bot_manager_pb2 as bot__manager__pb2
+import bot_comm_pb2 as bot__comm__pb2
+import bot_manager_pb2 as bot__manager__pb2
 
 
 class BotManagerCommunicatorStub(object):
@@ -22,22 +22,22 @@ class BotManagerCommunicatorStub(object):
                 )
         self.RemoveBot = channel.unary_unary(
                 '/BotManagerCommunicator/RemoveBot',
-                request_serializer=bot__manager__pb2.BotRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.ResumeBot = channel.unary_unary(
                 '/BotManagerCommunicator/ResumeBot',
-                request_serializer=bot__manager__pb2.BotRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.PauseBot = channel.unary_unary(
                 '/BotManagerCommunicator/PauseBot',
-                request_serializer=bot__manager__pb2.BotRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.StopBot = channel.unary_unary(
                 '/BotManagerCommunicator/StopBot',
-                request_serializer=bot__manager__pb2.BotRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.RenameBot = channel.unary_unary(
@@ -52,22 +52,22 @@ class BotManagerCommunicatorStub(object):
                 )
         self.GetBotsStatuses = channel.unary_unary(
                 '/BotManagerCommunicator/GetBotsStatuses',
-                request_serializer=bot__manager__pb2.BotsDataRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotsDataRequest.SerializeToString,
                 response_deserializer=bot__manager__pb2.BotsStatusesResponse.FromString,
                 )
         self.GetBotsNames = channel.unary_unary(
                 '/BotManagerCommunicator/GetBotsNames',
-                request_serializer=bot__manager__pb2.BotsDataRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotsDataRequest.SerializeToString,
                 response_deserializer=bot__manager__pb2.BotsNamesResponse.FromString,
                 )
         self.GetBotInfo = channel.unary_unary(
                 '/BotManagerCommunicator/GetBotInfo',
-                request_serializer=bot__manager__pb2.BotRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__manager__pb2.BotInfoResponse.FromString,
                 )
         self.GetFullInfo = channel.unary_unary(
                 '/BotManagerCommunicator/GetFullInfo',
-                request_serializer=bot__manager__pb2.BotsDataRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotsDataRequest.SerializeToString,
                 response_deserializer=bot__manager__pb2.FullInfoResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
@@ -77,7 +77,7 @@ class BotManagerCommunicatorStub(object):
                 )
         self.GetBotAddress = channel.unary_unary(
                 '/BotManagerCommunicator/GetBotAddress',
-                request_serializer=bot__manager__pb2.BotRequest.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__manager__pb2.BotStatusAddressResponse.FromString,
                 )
 
@@ -173,22 +173,22 @@ def add_BotManagerCommunicatorServicer_to_server(servicer, server):
             ),
             'RemoveBot': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveBot,
-                    request_deserializer=bot__manager__pb2.BotRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'ResumeBot': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeBot,
-                    request_deserializer=bot__manager__pb2.BotRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'PauseBot': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseBot,
-                    request_deserializer=bot__manager__pb2.BotRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'StopBot': grpc.unary_unary_rpc_method_handler(
                     servicer.StopBot,
-                    request_deserializer=bot__manager__pb2.BotRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'RenameBot': grpc.unary_unary_rpc_method_handler(
@@ -203,22 +203,22 @@ def add_BotManagerCommunicatorServicer_to_server(servicer, server):
             ),
             'GetBotsStatuses': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotsStatuses,
-                    request_deserializer=bot__manager__pb2.BotsDataRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotsDataRequest.FromString,
                     response_serializer=bot__manager__pb2.BotsStatusesResponse.SerializeToString,
             ),
             'GetBotsNames': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotsNames,
-                    request_deserializer=bot__manager__pb2.BotsDataRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotsDataRequest.FromString,
                     response_serializer=bot__manager__pb2.BotsNamesResponse.SerializeToString,
             ),
             'GetBotInfo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotInfo,
-                    request_deserializer=bot__manager__pb2.BotRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__manager__pb2.BotInfoResponse.SerializeToString,
             ),
             'GetFullInfo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetFullInfo,
-                    request_deserializer=bot__manager__pb2.BotsDataRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotsDataRequest.FromString,
                     response_serializer=bot__manager__pb2.FullInfoResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
@@ -228,7 +228,7 @@ def add_BotManagerCommunicatorServicer_to_server(servicer, server):
             ),
             'GetBotAddress': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotAddress,
-                    request_deserializer=bot__manager__pb2.BotRequest.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__manager__pb2.BotStatusAddressResponse.SerializeToString,
             ),
     }
@@ -270,7 +270,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/RemoveBot',
-            bot__manager__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -287,7 +287,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/ResumeBot',
-            bot__manager__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -304,7 +304,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/PauseBot',
-            bot__manager__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -321,7 +321,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/StopBot',
-            bot__manager__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -372,7 +372,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/GetBotsStatuses',
-            bot__manager__pb2.BotsDataRequest.SerializeToString,
+            bot__comm__pb2.BotsDataRequest.SerializeToString,
             bot__manager__pb2.BotsStatusesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -389,7 +389,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/GetBotsNames',
-            bot__manager__pb2.BotsDataRequest.SerializeToString,
+            bot__comm__pb2.BotsDataRequest.SerializeToString,
             bot__manager__pb2.BotsNamesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -406,7 +406,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/GetBotInfo',
-            bot__manager__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__manager__pb2.BotInfoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -423,7 +423,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/GetFullInfo',
-            bot__manager__pb2.BotsDataRequest.SerializeToString,
+            bot__comm__pb2.BotsDataRequest.SerializeToString,
             bot__manager__pb2.FullInfoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -457,7 +457,7 @@ class BotManagerCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotManagerCommunicator/GetBotAddress',
-            bot__manager__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__manager__pb2.BotStatusAddressResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

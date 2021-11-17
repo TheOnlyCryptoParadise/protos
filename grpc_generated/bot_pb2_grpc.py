@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import bot_bot_manager_pb2 as bot__bot__manager__pb2
 import bot_comm_pb2 as bot__comm__pb2
+import bot_pb2 as bot__pb2
 import transaction_pb2 as transaction__pb2
 
 
@@ -43,7 +43,7 @@ class BotCommunicatorStub(object):
                 )
         self.RenameBot = channel.unary_unary(
                 '/BotCommunicator/RenameBot',
-                request_serializer=bot__bot__manager__pb2.RenameRequest.SerializeToString,
+                request_serializer=bot__pb2.RenameRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.ResponseForRequestedTrade = channel.unary_unary(
@@ -139,7 +139,7 @@ def add_BotCommunicatorServicer_to_server(servicer, server):
             ),
             'RenameBot': grpc.unary_unary_rpc_method_handler(
                     servicer.RenameBot,
-                    request_deserializer=bot__bot__manager__pb2.RenameRequest.FromString,
+                    request_deserializer=bot__pb2.RenameRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'ResponseForRequestedTrade': grpc.unary_unary_rpc_method_handler(
@@ -259,7 +259,7 @@ class BotCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/RenameBot',
-            bot__bot__manager__pb2.RenameRequest.SerializeToString,
+            bot__pb2.RenameRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
