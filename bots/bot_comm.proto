@@ -8,6 +8,7 @@ message Empty {
 enum OperationStatus {
     SUCCESSFUL = 0;
     FAILED = 1;
+    WRONG_BOT = 2;
 }
 
 enum Operation{
