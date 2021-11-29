@@ -18,8 +18,8 @@ message BotStatistics{
   uint64 botId = 1;
   double profit = 2; // someday money-message, not double
   repeated Asset assets = 3; //repeated works like a list in python
-  int32 uptime = 4; // how long it lives from creation time
-  int32 sinceLastTrade = 5; //how long ago last trade was made
+  //int32 uptime = 4; // how long it lives from creation time
+  int32 sinceLastTrade = 4; //how long ago last trade was made
 }
 
 message Asset{
