@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0e\x62ot_comm.proto\"\x07\n\x05\x45mpty\"V\n\x0b\x42otResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12 \n\x06status\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x16\n\x02op\x18\x03 \x01(\x0e\x32\n.Operation\"\x1b\n\nBotRequest\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\"!\n\x0f\x42otsDataRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04*-\n\x0fOperationStatus\x12\x0e\n\nSUCCESSFUL\x10\x00\x12\n\n\x06\x46\x41ILED\x10\x01*p\n\tOperation\x12\x0e\n\nREMOVE_BOT\x10\x00\x12\x0e\n\nRESUME_BOT\x10\x01\x12\r\n\tPAUSE_BOT\x10\x02\x12\x0c\n\x08STOP_BOT\x10\x03\x12\x0e\n\nRENAME_BOT\x10\x04\x12\x16\n\x12UPDATE_DESCRIPTION\x10\x05\x62\x06proto3'
+  serialized_pb=b'\n\x0e\x62ot_comm.proto\"\x07\n\x05\x45mpty\"V\n\x0b\x42otResponse\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12 \n\x06status\x18\x02 \x01(\x0e\x32\x10.OperationStatus\x12\x16\n\x02op\x18\x03 \x01(\x0e\x32\n.Operation\"\x1b\n\nBotRequest\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\"!\n\x0f\x42otsDataRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04*<\n\x0fOperationStatus\x12\x0e\n\nSUCCESSFUL\x10\x00\x12\n\n\x06\x46\x41ILED\x10\x01\x12\r\n\tWRONG_BOT\x10\x02*p\n\tOperation\x12\x0e\n\nREMOVE_BOT\x10\x00\x12\x0e\n\nRESUME_BOT\x10\x01\x12\r\n\tPAUSE_BOT\x10\x02\x12\x0c\n\x08STOP_BOT\x10\x03\x12\x0e\n\nRENAME_BOT\x10\x04\x12\x16\n\x12UPDATE_DESCRIPTION\x10\x05\x62\x06proto3'
 )
 
 _OPERATIONSTATUS = _descriptor.EnumDescriptor(
@@ -40,11 +40,16 @@ _OPERATIONSTATUS = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='WRONG_BOT', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=179,
-  serialized_end=224,
+  serialized_end=239,
 )
 _sym_db.RegisterEnumDescriptor(_OPERATIONSTATUS)
 
@@ -89,14 +94,15 @@ _OPERATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=226,
-  serialized_end=338,
+  serialized_start=241,
+  serialized_end=353,
 )
 _sym_db.RegisterEnumDescriptor(_OPERATION)
 
 Operation = enum_type_wrapper.EnumTypeWrapper(_OPERATION)
 SUCCESSFUL = 0
 FAILED = 1
+WRONG_BOT = 2
 REMOVE_BOT = 0
 RESUME_BOT = 1
 PAUSE_BOT = 2
