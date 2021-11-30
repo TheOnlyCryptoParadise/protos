@@ -661,7 +661,8 @@ proto.BotsDataRequest.prototype.setUserid = function(value) {
  */
 proto.OperationStatus = {
   SUCCESSFUL: 0,
-  FAILED: 1
+  FAILED: 1,
+  WRONG_BOT: 2
 };
 
 /**

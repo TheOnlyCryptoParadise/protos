@@ -174,8 +174,7 @@ proto.BotStatistics.toObject = function(includeInstance, msg) {
     profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     assetsList: jspb.Message.toObjectList(msg.getAssetsList(),
     proto.Asset.toObject, includeInstance),
-    uptime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    sincelasttrade: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    sincelasttrade: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -226,10 +225,6 @@ proto.BotStatistics.deserializeBinaryFromReader = function(msg, reader) {
       msg.addAssets(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setUptime(value);
-      break;
-    case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSincelasttrade(value);
       break;
@@ -284,17 +279,10 @@ proto.BotStatistics.serializeBinaryToWriter = function(message, writer) {
       proto.Asset.serializeBinaryToWriter
     );
   }
-  f = message.getUptime();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
   f = message.getSincelasttrade();
   if (f !== 0) {
     writer.writeInt32(
-      5,
+      4,
       f
     );
   }
@@ -376,10 +364,10 @@ proto.BotStatistics.prototype.clearAssetsList = function() {
 
 
 /**
- * optional int32 uptime = 4;
+ * optional int32 sinceLastTrade = 4;
  * @return {number}
  */
-proto.BotStatistics.prototype.getUptime = function() {
+proto.BotStatistics.prototype.getSincelasttrade = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -388,26 +376,8 @@ proto.BotStatistics.prototype.getUptime = function() {
  * @param {number} value
  * @return {!proto.BotStatistics} returns this
  */
-proto.BotStatistics.prototype.setUptime = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
-};
-
-
-/**
- * optional int32 sinceLastTrade = 5;
- * @return {number}
- */
-proto.BotStatistics.prototype.getSincelasttrade = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.BotStatistics} returns this
- */
 proto.BotStatistics.prototype.setSincelasttrade = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
