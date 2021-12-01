@@ -23,6 +23,6 @@ jobs:
       #     args: build
       - run:
           name: create archive
-          command: mkdir dist && tar -cvf dist/grp_generated.tar grpc_generated
+          command: mkdir dist && tar -cvf dist/grpc_generated.tar grpc_generated
       - store_artifacts:
           path: dist/
