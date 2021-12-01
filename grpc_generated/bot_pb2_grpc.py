@@ -49,12 +49,12 @@ class BotCommunicatorStub(object):
         self.ResponseForRequestedTrade = channel.unary_unary(
                 '/BotCommunicator/ResponseForRequestedTrade',
                 request_serializer=transaction__pb2.Transaction.SerializeToString,
-                response_deserializer=bot__comm__pb2.Empty.FromString,
+                response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.SendOpenTrades = channel.unary_unary(
                 '/BotCommunicator/SendOpenTrades',
                 request_serializer=transaction__pb2.Transactions.SerializeToString,
-                response_deserializer=bot__comm__pb2.Empty.FromString,
+                response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
 
 
@@ -145,12 +145,12 @@ def add_BotCommunicatorServicer_to_server(servicer, server):
             'ResponseForRequestedTrade': grpc.unary_unary_rpc_method_handler(
                     servicer.ResponseForRequestedTrade,
                     request_deserializer=transaction__pb2.Transaction.FromString,
-                    response_serializer=bot__comm__pb2.Empty.SerializeToString,
+                    response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'SendOpenTrades': grpc.unary_unary_rpc_method_handler(
                     servicer.SendOpenTrades,
                     request_deserializer=transaction__pb2.Transactions.FromString,
-                    response_serializer=bot__comm__pb2.Empty.SerializeToString,
+                    response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -277,7 +277,7 @@ class BotCommunicator(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/ResponseForRequestedTrade',
             transaction__pb2.Transaction.SerializeToString,
-            bot__comm__pb2.Empty.FromString,
+            bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -294,6 +294,6 @@ class BotCommunicator(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/SendOpenTrades',
             transaction__pb2.Transactions.SerializeToString,
-            bot__comm__pb2.Empty.FromString,
+            bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

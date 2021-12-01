@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from . import bot_comm_pb2 as bot__comm__pb2
+import bot_comm_pb2 as bot__comm__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\",\n\x0cTransactions\x12\x1c\n\x06trades\x18\x01 \x03(\x0b\x32\x0c.Transaction*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x62\x06proto3'
+  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\",\n\x0cTransactions\x12\x1c\n\x06trades\x18\x01 \x03(\x0b\x32\x0c.Transaction*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32k\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponseb\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,])
 
@@ -252,5 +252,41 @@ Transactions = _reflection.GeneratedProtocolMessageType('Transactions', (_messag
   })
 _sym_db.RegisterMessage(Transactions)
 
+
+
+_TRANSACTIONCOMMUNICATOR = _descriptor.ServiceDescriptor(
+  name='TransactionCommunicator',
+  full_name='TransactionCommunicator',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=416,
+  serialized_end=523,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='BotStopped',
+    full_name='TransactionCommunicator.BotStopped',
+    index=0,
+    containing_service=None,
+    input_type=bot__comm__pb2._BOTREQUEST,
+    output_type=bot__comm__pb2._BOTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='BotRemoved',
+    full_name='TransactionCommunicator.BotRemoved',
+    index=1,
+    containing_service=None,
+    input_type=bot__comm__pb2._BOTREQUEST,
+    output_type=bot__comm__pb2._BOTRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_TRANSACTIONCOMMUNICATOR)
+
+DESCRIPTOR.services_by_name['TransactionCommunicator'] = _TRANSACTIONCOMMUNICATOR
 
 # @@protoc_insertion_point(module_scope)

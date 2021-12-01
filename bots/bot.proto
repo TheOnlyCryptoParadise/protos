@@ -19,8 +19,8 @@ service BotCommunicator{
     rpc Ping(Empty) returns (Empty) {};
     rpc RenameBot(RenameRequest) returns (BotResponse) {};
 
-    rpc ResponseForRequestedTrade(Transaction) returns (Empty) {};
-    rpc SendOpenTrades(Transactions) returns (Empty) {};
+    rpc ResponseForRequestedTrade(Transaction) returns (BotResponse) {};
+    rpc SendOpenTrades(Transactions) returns (BotResponse) {};
 }
 
 message RenameRequest {

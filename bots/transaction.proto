@@ -2,6 +2,12 @@ syntax = "proto3";
 
 import "bot_comm.proto";
 
+service TransactionCommunicator{
+  rpc BotStopped(BotRequest) returns(BotResponse);
+  rpc BotRemoved(BotRequest) returns(BotResponse);
+}
+
+
 enum TransactionType{
   TO_BUY = 0;
   TO_SELL = 1;
