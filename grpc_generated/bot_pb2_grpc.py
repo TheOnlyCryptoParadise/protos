@@ -3,7 +3,6 @@
 import grpc
 
 import bot_comm_pb2 as bot__comm__pb2
-import bot_pb2 as bot__pb2
 import transaction_pb2 as transaction__pb2
 
 
@@ -40,11 +39,6 @@ class BotCommunicatorStub(object):
                 '/BotCommunicator/Ping',
                 request_serializer=bot__comm__pb2.Empty.SerializeToString,
                 response_deserializer=bot__comm__pb2.Empty.FromString,
-                )
-        self.RenameBot = channel.unary_unary(
-                '/BotCommunicator/RenameBot',
-                request_serializer=bot__pb2.RenameRequest.SerializeToString,
-                response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.ResponseForRequestedTrade = channel.unary_unary(
                 '/BotCommunicator/ResponseForRequestedTrade',
@@ -91,12 +85,6 @@ class BotCommunicatorServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RenameBot(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ResponseForRequestedTrade(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -136,11 +124,6 @@ def add_BotCommunicatorServicer_to_server(servicer, server):
                     servicer.Ping,
                     request_deserializer=bot__comm__pb2.Empty.FromString,
                     response_serializer=bot__comm__pb2.Empty.SerializeToString,
-            ),
-            'RenameBot': grpc.unary_unary_rpc_method_handler(
-                    servicer.RenameBot,
-                    request_deserializer=bot__pb2.RenameRequest.FromString,
-                    response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'ResponseForRequestedTrade': grpc.unary_unary_rpc_method_handler(
                     servicer.ResponseForRequestedTrade,
@@ -244,23 +227,6 @@ class BotCommunicator(object):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/Ping',
             bot__comm__pb2.Empty.SerializeToString,
             bot__comm__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RenameBot(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/BotCommunicator/RenameBot',
-            bot__pb2.RenameRequest.SerializeToString,
-            bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

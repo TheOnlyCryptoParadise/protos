@@ -674,7 +674,9 @@ proto.Operation = {
   PAUSE_BOT: 2,
   STOP_BOT: 3,
   RENAME_BOT: 4,
-  UPDATE_DESCRIPTION: 5
+  UPDATE_DESCRIPTION: 5,
+  OPEN_TRADES: 6,
+  TRADE_RESPONSE: 7
 };
 
 goog.object.extend(exports, proto);

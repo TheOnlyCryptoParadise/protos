@@ -443,13 +443,13 @@ proto.BotCommunicatorPromiseClient.prototype.renameBot =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.Transaction,
- *   !proto.Empty>}
+ *   !proto.BotResponse>}
  */
 const methodDescriptor_BotCommunicator_ResponseForRequestedTrade = new grpc.web.MethodDescriptor(
   '/BotCommunicator/ResponseForRequestedTrade',
   grpc.web.MethodType.UNARY,
   transaction_pb.Transaction,
-  bot_comm_pb.Empty,
+  bot_comm_pb.BotResponse,
   /**
    * @param {!proto.Transaction} request
    * @return {!Uint8Array}
@@ -457,7 +457,7 @@ const methodDescriptor_BotCommunicator_ResponseForRequestedTrade = new grpc.web.
   function(request) {
     return request.serializeBinary();
   },
-  bot_comm_pb.Empty.deserializeBinary
+  bot_comm_pb.BotResponse.deserializeBinary
 );
 
 
@@ -466,9 +466,9 @@ const methodDescriptor_BotCommunicator_ResponseForRequestedTrade = new grpc.web.
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Empty)}
+ * @param {function(?grpc.web.RpcError, ?proto.BotResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Empty>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.BotResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.BotCommunicatorClient.prototype.responseForRequestedTrade =
@@ -487,7 +487,7 @@ proto.BotCommunicatorClient.prototype.responseForRequestedTrade =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Empty>}
+ * @return {!Promise<!proto.BotResponse>}
  *     Promise that resolves to the response
  */
 proto.BotCommunicatorPromiseClient.prototype.responseForRequestedTrade =
@@ -504,13 +504,13 @@ proto.BotCommunicatorPromiseClient.prototype.responseForRequestedTrade =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.Transactions,
- *   !proto.Empty>}
+ *   !proto.BotResponse>}
  */
 const methodDescriptor_BotCommunicator_SendOpenTrades = new grpc.web.MethodDescriptor(
   '/BotCommunicator/SendOpenTrades',
   grpc.web.MethodType.UNARY,
   transaction_pb.Transactions,
-  bot_comm_pb.Empty,
+  bot_comm_pb.BotResponse,
   /**
    * @param {!proto.Transactions} request
    * @return {!Uint8Array}
@@ -518,7 +518,7 @@ const methodDescriptor_BotCommunicator_SendOpenTrades = new grpc.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  bot_comm_pb.Empty.deserializeBinary
+  bot_comm_pb.BotResponse.deserializeBinary
 );
 
 
@@ -527,9 +527,9 @@ const methodDescriptor_BotCommunicator_SendOpenTrades = new grpc.web.MethodDescr
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Empty)}
+ * @param {function(?grpc.web.RpcError, ?proto.BotResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Empty>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.BotResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.BotCommunicatorClient.prototype.sendOpenTrades =
@@ -548,7 +548,7 @@ proto.BotCommunicatorClient.prototype.sendOpenTrades =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Empty>}
+ * @return {!Promise<!proto.BotResponse>}
  *     Promise that resolves to the response
  */
 proto.BotCommunicatorPromiseClient.prototype.sendOpenTrades =

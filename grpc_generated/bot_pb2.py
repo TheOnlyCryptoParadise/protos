@@ -21,53 +21,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tbot.proto\x1a\x0e\x62ot_comm.proto\x1a\x11transaction.proto\" \n\rRenameRequest\x12\x0f\n\x07newName\x18\x04 \x01(\t2\xd5\x02\n\x0f\x42otCommunicator\x12#\n\tRemoveBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12#\n\tResumeBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\"\n\x08PauseBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12!\n\x07StopBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\x18\n\x04Ping\x12\x06.Empty\x1a\x06.Empty\"\x00\x12+\n\tRenameBot\x12\x0e.RenameRequest\x1a\x0c.BotResponse\"\x00\x12\x39\n\x19ResponseForRequestedTrade\x12\x0c.Transaction\x1a\x0c.BotResponse\"\x00\x12/\n\x0eSendOpenTrades\x12\r.Transactions\x1a\x0c.BotResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\tbot.proto\x1a\x0e\x62ot_comm.proto\x1a\x11transaction.proto2\xa8\x02\n\x0f\x42otCommunicator\x12#\n\tRemoveBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12#\n\tResumeBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\"\n\x08PauseBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12!\n\x07StopBot\x12\x06.Empty\x1a\x0c.BotResponse\"\x00\x12\x18\n\x04Ping\x12\x06.Empty\x1a\x06.Empty\"\x00\x12\x39\n\x19ResponseForRequestedTrade\x12\x0c.Transaction\x1a\x0c.BotResponse\"\x00\x12/\n\x0eSendOpenTrades\x12\r.Transactions\x1a\x0c.BotResponse\"\x00\x62\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,transaction__pb2.DESCRIPTOR,])
 
 
 
-
-_RENAMEREQUEST = _descriptor.Descriptor(
-  name='RenameRequest',
-  full_name='RenameRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='newName', full_name='RenameRequest.newName', index=0,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=48,
-  serialized_end=80,
-)
-
-DESCRIPTOR.message_types_by_name['RenameRequest'] = _RENAMEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-RenameRequest = _reflection.GeneratedProtocolMessageType('RenameRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RENAMEREQUEST,
-  '__module__' : 'bot_pb2'
-  # @@protoc_insertion_point(class_scope:RenameRequest)
-  })
-_sym_db.RegisterMessage(RenameRequest)
 
 
 
@@ -78,8 +38,8 @@ _BOTCOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=83,
-  serialized_end=424,
+  serialized_start=49,
+  serialized_end=345,
   methods=[
   _descriptor.MethodDescriptor(
     name='RemoveBot',
@@ -132,19 +92,9 @@ _BOTCOMMUNICATOR = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RenameBot',
-    full_name='BotCommunicator.RenameBot',
-    index=5,
-    containing_service=None,
-    input_type=_RENAMEREQUEST,
-    output_type=bot__comm__pb2._BOTRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
     name='ResponseForRequestedTrade',
     full_name='BotCommunicator.ResponseForRequestedTrade',
-    index=6,
+    index=5,
     containing_service=None,
     input_type=transaction__pb2._TRANSACTION,
     output_type=bot__comm__pb2._BOTRESPONSE,
@@ -154,7 +104,7 @@ _BOTCOMMUNICATOR = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SendOpenTrades',
     full_name='BotCommunicator.SendOpenTrades',
-    index=7,
+    index=6,
     containing_service=None,
     input_type=transaction__pb2._TRANSACTIONS,
     output_type=bot__comm__pb2._BOTRESPONSE,

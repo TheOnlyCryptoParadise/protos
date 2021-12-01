@@ -5,8 +5,13 @@ import "bot_comm.proto";
 service TransactionCommunicator{
   rpc BotStopped(BotRequest) returns(BotResponse);
   rpc BotRemoved(BotRequest) returns(BotResponse);
+  rpc OpenTrades(BotAddress) returns(BotResponse);
 }
 
+message BotAddress{
+  uint64 botId = 1;
+  string botAddress = 2;
+}
 
 enum TransactionType{
   TO_BUY = 0;

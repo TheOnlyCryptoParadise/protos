@@ -17,13 +17,13 @@ service BotCommunicator{
     rpc PauseBot(Empty) returns (BotResponse) {};
     rpc StopBot(Empty) returns (BotResponse) {};
     rpc Ping(Empty) returns (Empty) {};
-    rpc RenameBot(RenameRequest) returns (BotResponse) {};
+//    rpc RenameBot(RenameRequest) returns (BotResponse) {};
 
     rpc ResponseForRequestedTrade(Transaction) returns (BotResponse) {};
     rpc SendOpenTrades(Transactions) returns (BotResponse) {};
 }
 
-message RenameRequest {
-    string newName = 4;
-}
+//message RenameRequest {
+//    string newName = 4;
+//}
 

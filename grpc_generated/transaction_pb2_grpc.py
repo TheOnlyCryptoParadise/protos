@@ -3,6 +3,7 @@
 import grpc
 
 import bot_comm_pb2 as bot__comm__pb2
+import transaction_pb2 as transaction__pb2
 
 
 class TransactionCommunicatorStub(object):
@@ -24,6 +25,11 @@ class TransactionCommunicatorStub(object):
                 request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
+        self.OpenTrades = channel.unary_unary(
+                '/TransactionCommunicator/OpenTrades',
+                request_serializer=transaction__pb2.BotAddress.SerializeToString,
+                response_deserializer=bot__comm__pb2.BotResponse.FromString,
+                )
 
 
 class TransactionCommunicatorServicer(object):
@@ -41,6 +47,12 @@ class TransactionCommunicatorServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def OpenTrades(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TransactionCommunicatorServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -52,6 +64,11 @@ def add_TransactionCommunicatorServicer_to_server(servicer, server):
             'BotRemoved': grpc.unary_unary_rpc_method_handler(
                     servicer.BotRemoved,
                     request_deserializer=bot__comm__pb2.BotRequest.FromString,
+                    response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
+            ),
+            'OpenTrades': grpc.unary_unary_rpc_method_handler(
+                    servicer.OpenTrades,
+                    request_deserializer=transaction__pb2.BotAddress.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
     }
@@ -94,6 +111,23 @@ class TransactionCommunicator(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/TransactionCommunicator/BotRemoved',
             bot__comm__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OpenTrades(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/TransactionCommunicator/OpenTrades',
+            transaction__pb2.BotAddress.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
