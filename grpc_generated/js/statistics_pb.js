@@ -174,7 +174,7 @@ proto.BotStatistics.toObject = function(includeInstance, msg) {
     profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     assetsList: jspb.Message.toObjectList(msg.getAssetsList(),
     proto.Asset.toObject, includeInstance),
-    sincelasttrade: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    sincelasttrade: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -225,7 +225,7 @@ proto.BotStatistics.deserializeBinaryFromReader = function(msg, reader) {
       msg.addAssets(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSincelasttrade(value);
       break;
     default:
@@ -280,8 +280,8 @@ proto.BotStatistics.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getSincelasttrade();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -364,20 +364,20 @@ proto.BotStatistics.prototype.clearAssetsList = function() {
 
 
 /**
- * optional int32 sinceLastTrade = 4;
- * @return {number}
+ * optional string sinceLastTrade = 4;
+ * @return {string}
  */
 proto.BotStatistics.prototype.getSincelasttrade = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.BotStatistics} returns this
  */
 proto.BotStatistics.prototype.setSincelasttrade = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -415,11 +415,9 @@ proto.Asset.toObject = function(includeInstance, msg) {
   var f, obj = {
     pair: jspb.Message.getFieldWithDefault(msg, 1, ""),
     amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    buyrate: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    currentrate: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    buyvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    currentvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0)
+    currentrate: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
+    currentvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
   };
 
   if (includeInstance) {
@@ -466,21 +464,13 @@ proto.Asset.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setBuyrate(value);
+      msg.setCurrentrate(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setCurrentrate(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setBuyvalue(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readDouble());
       msg.setCurrentvalue(value);
       break;
-    case 7:
+    case 5:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setProfit(value);
       break;
@@ -527,38 +517,24 @@ proto.Asset.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBuyrate();
+  f = message.getCurrentrate();
   if (f !== 0.0) {
     writer.writeDouble(
       3,
       f
     );
   }
-  f = message.getCurrentrate();
+  f = message.getCurrentvalue();
   if (f !== 0.0) {
     writer.writeDouble(
       4,
       f
     );
   }
-  f = message.getBuyvalue();
-  if (f !== 0.0) {
-    writer.writeDouble(
-      5,
-      f
-    );
-  }
-  f = message.getCurrentvalue();
-  if (f !== 0.0) {
-    writer.writeDouble(
-      6,
-      f
-    );
-  }
   f = message.getProfit();
   if (f !== 0.0) {
     writer.writeFloat(
-      7,
+      5,
       f
     );
   }
@@ -602,10 +578,10 @@ proto.Asset.prototype.setAmount = function(value) {
 
 
 /**
- * optional double buyRate = 3;
+ * optional double currentRate = 3;
  * @return {number}
  */
-proto.Asset.prototype.getBuyrate = function() {
+proto.Asset.prototype.getCurrentrate = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -614,16 +590,16 @@ proto.Asset.prototype.getBuyrate = function() {
  * @param {number} value
  * @return {!proto.Asset} returns this
  */
-proto.Asset.prototype.setBuyrate = function(value) {
+proto.Asset.prototype.setCurrentrate = function(value) {
   return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 
 /**
- * optional double currentRate = 4;
+ * optional double currentValue = 4;
  * @return {number}
  */
-proto.Asset.prototype.getCurrentrate = function() {
+proto.Asset.prototype.getCurrentvalue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
 };
 
@@ -632,16 +608,16 @@ proto.Asset.prototype.getCurrentrate = function() {
  * @param {number} value
  * @return {!proto.Asset} returns this
  */
-proto.Asset.prototype.setCurrentrate = function(value) {
+proto.Asset.prototype.setCurrentvalue = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
 };
 
 
 /**
- * optional double buyValue = 5;
+ * optional float profit = 5;
  * @return {number}
  */
-proto.Asset.prototype.getBuyvalue = function() {
+proto.Asset.prototype.getProfit = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
@@ -650,44 +626,8 @@ proto.Asset.prototype.getBuyvalue = function() {
  * @param {number} value
  * @return {!proto.Asset} returns this
  */
-proto.Asset.prototype.setBuyvalue = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
-};
-
-
-/**
- * optional double currentValue = 6;
- * @return {number}
- */
-proto.Asset.prototype.getCurrentvalue = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.Asset} returns this
- */
-proto.Asset.prototype.setCurrentvalue = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
-};
-
-
-/**
- * optional float profit = 7;
- * @return {number}
- */
-proto.Asset.prototype.getProfit = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.Asset} returns this
- */
 proto.Asset.prototype.setProfit = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
+  return jspb.Message.setProto3FloatField(this, 5, value);
 };
 
 
@@ -1075,7 +1015,7 @@ proto.OverallStatistics.toObject = function(includeInstance, msg) {
   var f, obj = {
     totalprofit: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
     totalbalance: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
-    lasttradetime: (f = msg.getLasttradetime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+    lasttradetime: jspb.Message.getFieldWithDefault(msg, 3, ""),
     bestbotname: jspb.Message.getFieldWithDefault(msg, 4, ""),
     worstbotname: jspb.Message.getFieldWithDefault(msg, 5, ""),
     realisedtrades: jspb.Message.getFieldWithDefault(msg, 6, 0),
@@ -1125,8 +1065,7 @@ proto.OverallStatistics.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTotalbalance(value);
       break;
     case 3:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setLasttradetime(value);
       break;
     case 4:
@@ -1189,11 +1128,10 @@ proto.OverallStatistics.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getLasttradetime();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       3,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+      f
     );
   }
   f = message.getBestbotname();
@@ -1264,39 +1202,20 @@ proto.OverallStatistics.prototype.setTotalbalance = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp lastTradeTime = 3;
- * @return {?proto.google.protobuf.Timestamp}
+ * optional string lastTradeTime = 3;
+ * @return {string}
  */
 proto.OverallStatistics.prototype.getLasttradetime = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @param {string} value
  * @return {!proto.OverallStatistics} returns this
-*/
+ */
 proto.OverallStatistics.prototype.setLasttradetime = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.OverallStatistics} returns this
- */
-proto.OverallStatistics.prototype.clearLasttradetime = function() {
-  return this.setLasttradetime(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.OverallStatistics.prototype.hasLasttradetime = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
