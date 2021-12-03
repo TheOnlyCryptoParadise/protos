@@ -79,13 +79,13 @@ proto.StatisticsServiceCommunicatorPromiseClient =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.BotsDataRequest,
- *   !proto.Transactions>}
+ *   !proto.TransactionsExtended>}
  */
 const methodDescriptor_StatisticsServiceCommunicator_GetAllUserTransactions = new grpc.web.MethodDescriptor(
   '/StatisticsServiceCommunicator/GetAllUserTransactions',
   grpc.web.MethodType.UNARY,
   bot_comm_pb.BotsDataRequest,
-  transaction_pb.Transactions,
+  transaction_pb.TransactionsExtended,
   /**
    * @param {!proto.BotsDataRequest} request
    * @return {!Uint8Array}
@@ -93,7 +93,7 @@ const methodDescriptor_StatisticsServiceCommunicator_GetAllUserTransactions = ne
   function(request) {
     return request.serializeBinary();
   },
-  transaction_pb.Transactions.deserializeBinary
+  transaction_pb.TransactionsExtended.deserializeBinary
 );
 
 
@@ -102,9 +102,9 @@ const methodDescriptor_StatisticsServiceCommunicator_GetAllUserTransactions = ne
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Transactions)}
+ * @param {function(?grpc.web.RpcError, ?proto.TransactionsExtended)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Transactions>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.TransactionsExtended>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.StatisticsServiceCommunicatorClient.prototype.getAllUserTransactions =
@@ -123,7 +123,7 @@ proto.StatisticsServiceCommunicatorClient.prototype.getAllUserTransactions =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Transactions>}
+ * @return {!Promise<!proto.TransactionsExtended>}
  *     Promise that resolves to the response
  */
 proto.StatisticsServiceCommunicatorPromiseClient.prototype.getAllUserTransactions =
@@ -140,13 +140,13 @@ proto.StatisticsServiceCommunicatorPromiseClient.prototype.getAllUserTransaction
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.BotRequest,
- *   !proto.Transactions>}
+ *   !proto.TransactionsExtended>}
  */
 const methodDescriptor_StatisticsServiceCommunicator_GetBotTransactions = new grpc.web.MethodDescriptor(
   '/StatisticsServiceCommunicator/GetBotTransactions',
   grpc.web.MethodType.UNARY,
   bot_comm_pb.BotRequest,
-  transaction_pb.Transactions,
+  transaction_pb.TransactionsExtended,
   /**
    * @param {!proto.BotRequest} request
    * @return {!Uint8Array}
@@ -154,7 +154,7 @@ const methodDescriptor_StatisticsServiceCommunicator_GetBotTransactions = new gr
   function(request) {
     return request.serializeBinary();
   },
-  transaction_pb.Transactions.deserializeBinary
+  transaction_pb.TransactionsExtended.deserializeBinary
 );
 
 
@@ -163,9 +163,9 @@ const methodDescriptor_StatisticsServiceCommunicator_GetBotTransactions = new gr
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Transactions)}
+ * @param {function(?grpc.web.RpcError, ?proto.TransactionsExtended)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Transactions>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.TransactionsExtended>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.StatisticsServiceCommunicatorClient.prototype.getBotTransactions =
@@ -184,7 +184,7 @@ proto.StatisticsServiceCommunicatorClient.prototype.getBotTransactions =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.Transactions>}
+ * @return {!Promise<!proto.TransactionsExtended>}
  *     Promise that resolves to the response
  */
 proto.StatisticsServiceCommunicatorPromiseClient.prototype.getBotTransactions =

@@ -1,7 +1,7 @@
 syntax = "proto3";
 // to generate Python code from proto: python -m grpc_tools.protoc -I./bots --python_out=./grpc_generated --grpc_python_out=./grpc_generated ./bots/transaction.proto --proto_path=bots
-//js: protoc -I=. bot_bot_manager.proto --js_out=import_style=commonjs:.
-//js: protoc -I=. bot_manager.proto --grpc-web_out=import_style=commonjs,mode=grpcweb:.
+//js: protoc -I=bots bot_bot_manager.proto --js_out=import_style=commonjs:.
+//js: protoc -I=bots bot_manager.proto --grpc-web_out=import_style=commonjs,mode=grpcweb:.
 
 /**
 Communication between Bot Manager (client) and Bot (server).
