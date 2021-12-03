@@ -12,11 +12,11 @@ import "bot_comm.proto";
 import "transaction.proto";
 
 service BotCommunicator{
-    rpc RemoveBot(Empty) returns (BotResponse) {};
-    rpc ResumeBot(Empty) returns (BotResponse) {};
-    rpc PauseBot(Empty) returns (BotResponse) {};
-    rpc StopBot(Empty) returns (BotResponse) {};
-    rpc Ping(Empty) returns (Empty) {};
+    rpc RemoveBot(BotRequest) returns (BotResponse) {};
+    rpc ResumeBot(BotRequest) returns (BotResponse) {};
+    rpc PauseBot(BotRequest) returns (BotResponse) {};
+    rpc StopBot(BotRequest) returns (BotResponse) {};
+    rpc Ping(BotRequest) returns (BotResponse) {};
 //    rpc RenameBot(RenameRequest) returns (BotResponse) {};
 
     rpc ResponseForRequestedTrade(Transaction) returns (BotResponse) {};

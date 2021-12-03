@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10statistics.proto\x1a\x11transaction.proto\x1a\x0e\x62ot_comm.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"^\n\rBotStatistics\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06profit\x18\x02 \x01(\x01\x12\x16\n\x06\x61ssets\x18\x03 \x03(\x0b\x32\x06.Asset\x12\x16\n\x0esinceLastTrade\x18\x04 \x01(\x05\"\x83\x01\n\x05\x41sset\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\x0f\n\x07\x62uyRate\x18\x03 \x01(\x01\x12\x13\n\x0b\x63urrentRate\x18\x04 \x01(\x01\x12\x10\n\x08\x62uyValue\x18\x05 \x01(\x01\x12\x14\n\x0c\x63urrentValue\x18\x06 \x01(\x01\x12\x0e\n\x06profit\x18\x07 \x01(\x02\"1\n\x08\x42otAsset\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x16\n\x06\x61ssets\x18\x02 \x03(\x0b\x32\x06.Asset\"\'\n\nUserAssets\x12\x19\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\t.BotAsset\"\xc7\x01\n\x11OverallStatistics\x12\x13\n\x0btotalProfit\x18\x01 \x01(\x01\x12\x14\n\x0ctotalBalance\x18\x02 \x01(\x01\x12\x31\n\rlastTradeTime\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x62\x65stBotName\x18\x04 \x01(\t\x12\x14\n\x0cworstBotName\x18\x05 \x01(\t\x12\x16\n\x0erealisedTrades\x18\x06 \x01(\x05\x12\x11\n\tallTrades\x18\x07 \x01(\x05\x32\xb9\x02\n\x1dStatisticsServiceCommunicator\x12;\n\x16GetAllUserTransactions\x12\x10.BotsDataRequest\x1a\r.Transactions\"\x00\x12\x32\n\x12GetBotTransactions\x12\x0b.BotRequest\x1a\r.Transactions\"\x00\x12\x31\n\x10GetBotStatistics\x12\x0b.BotRequest\x1a\x0e.BotStatistics\"\x00\x12\x42\n\x18GetBotsOverallStatistics\x12\x10.BotsDataRequest\x1a\x12.OverallStatistics\"\x00\x12\x30\n\rGetUserAssets\x12\x10.BotsDataRequest\x1a\x0b.UserAssets\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x10statistics.proto\x1a\x11transaction.proto\x1a\x0e\x62ot_comm.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"^\n\rBotStatistics\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06profit\x18\x02 \x01(\x01\x12\x16\n\x06\x61ssets\x18\x03 \x03(\x0b\x32\x06.Asset\x12\x16\n\x0esinceLastTrade\x18\x04 \x01(\x05\"`\n\x05\x41sset\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\x13\n\x0b\x63urrentRate\x18\x03 \x01(\x01\x12\x14\n\x0c\x63urrentValue\x18\x04 \x01(\x01\x12\x0e\n\x06profit\x18\x05 \x01(\x02\"1\n\x08\x42otAsset\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x16\n\x06\x61ssets\x18\x02 \x03(\x0b\x32\x06.Asset\"\'\n\nUserAssets\x12\x19\n\x06\x61ssets\x18\x01 \x03(\x0b\x32\t.BotAsset\"\xab\x01\n\x11OverallStatistics\x12\x13\n\x0btotalProfit\x18\x01 \x01(\x01\x12\x14\n\x0ctotalBalance\x18\x02 \x01(\x01\x12\x15\n\rlastTradeTime\x18\x03 \x01(\t\x12\x13\n\x0b\x62\x65stBotName\x18\x04 \x01(\t\x12\x14\n\x0cworstBotName\x18\x05 \x01(\t\x12\x16\n\x0erealisedTrades\x18\x06 \x01(\x05\x12\x11\n\tallTrades\x18\x07 \x01(\x05\x32\xc9\x02\n\x1dStatisticsServiceCommunicator\x12\x43\n\x16GetAllUserTransactions\x12\x10.BotsDataRequest\x1a\x15.TransactionsExtended\"\x00\x12:\n\x12GetBotTransactions\x12\x0b.BotRequest\x1a\x15.TransactionsExtended\"\x00\x12\x31\n\x10GetBotStatistics\x12\x0b.BotRequest\x1a\x0e.BotStatistics\"\x00\x12\x42\n\x18GetBotsOverallStatistics\x12\x10.BotsDataRequest\x1a\x12.OverallStatistics\"\x00\x12\x30\n\rGetUserAssets\x12\x10.BotsDataRequest\x1a\x0b.UserAssets\"\x00\x62\x06proto3'
   ,
   dependencies=[transaction__pb2.DESCRIPTOR,bot__comm__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -105,36 +105,22 @@ _ASSET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='buyRate', full_name='Asset.buyRate', index=2,
+      name='currentRate', full_name='Asset.currentRate', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='currentRate', full_name='Asset.currentRate', index=3,
+      name='currentValue', full_name='Asset.currentValue', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='buyValue', full_name='Asset.buyValue', index=4,
-      number=5, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='currentValue', full_name='Asset.currentValue', index=5,
-      number=6, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='profit', full_name='Asset.profit', index=6,
-      number=7, type=2, cpp_type=6, label=1,
+      name='profit', full_name='Asset.profit', index=4,
+      number=5, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -151,8 +137,8 @@ _ASSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=185,
-  serialized_end=316,
+  serialized_start=184,
+  serialized_end=280,
 )
 
 
@@ -190,8 +176,8 @@ _BOTASSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=318,
-  serialized_end=367,
+  serialized_start=282,
+  serialized_end=331,
 )
 
 
@@ -222,8 +208,8 @@ _USERASSETS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=369,
-  serialized_end=408,
+  serialized_start=333,
+  serialized_end=372,
 )
 
 
@@ -251,8 +237,8 @@ _OVERALLSTATISTICS = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='lastTradeTime', full_name='OverallStatistics.lastTradeTime', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -296,14 +282,13 @@ _OVERALLSTATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=411,
-  serialized_end=610,
+  serialized_start=375,
+  serialized_end=546,
 )
 
 _BOTSTATISTICS.fields_by_name['assets'].message_type = _ASSET
 _BOTASSET.fields_by_name['assets'].message_type = _ASSET
 _USERASSETS.fields_by_name['assets'].message_type = _BOTASSET
-_OVERALLSTATISTICS.fields_by_name['lastTradeTime'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['BotStatistics'] = _BOTSTATISTICS
 DESCRIPTOR.message_types_by_name['Asset'] = _ASSET
 DESCRIPTOR.message_types_by_name['BotAsset'] = _BOTASSET
@@ -355,8 +340,8 @@ _STATISTICSSERVICECOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=613,
-  serialized_end=926,
+  serialized_start=549,
+  serialized_end=878,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetAllUserTransactions',
@@ -364,7 +349,7 @@ _STATISTICSSERVICECOMMUNICATOR = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=bot__comm__pb2._BOTSDATAREQUEST,
-    output_type=transaction__pb2._TRANSACTIONS,
+    output_type=transaction__pb2._TRANSACTIONSEXTENDED,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -374,7 +359,7 @@ _STATISTICSSERVICECOMMUNICATOR = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=bot__comm__pb2._BOTREQUEST,
-    output_type=transaction__pb2._TRANSACTIONS,
+    output_type=transaction__pb2._TRANSACTIONSEXTENDED,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
