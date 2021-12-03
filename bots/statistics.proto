@@ -5,7 +5,7 @@ import "bot_comm.proto";
 import "google/protobuf/timestamp.proto";
 
 service StatisticsServiceCommunicator{
-  rpc GetAllUserTransactions(BotsDataRequest) returns (Transactions) {};
+  rpc GetAllUserTransactions(BotsDataRequest) returns (TransactionsExtended) {};
   rpc GetBotTransactions(BotRequest) returns (TransactionsExtended) {};
 
   rpc GetBotStatistics(BotRequest) returns(BotStatistics) {};
