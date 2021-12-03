@@ -30,6 +30,7 @@ message Asset{
  // double buyValue = 5; // buyRate * amount
   double currentValue = 4; // currentRate * amount
   float profit = 5;
+  float cost = 6;
 }
 
 message BotAsset{
