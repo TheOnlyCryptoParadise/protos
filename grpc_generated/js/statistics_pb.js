@@ -417,7 +417,8 @@ proto.Asset.toObject = function(includeInstance, msg) {
     amount: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     currentrate: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
     currentvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
-    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0)
+    profit: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
+    cost: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0)
   };
 
   if (includeInstance) {
@@ -473,6 +474,10 @@ proto.Asset.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setProfit(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setCost(value);
       break;
     default:
       reader.skipField();
@@ -535,6 +540,13 @@ proto.Asset.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeFloat(
       5,
+      f
+    );
+  }
+  f = message.getCost();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      6,
       f
     );
   }
@@ -628,6 +640,24 @@ proto.Asset.prototype.getProfit = function() {
  */
 proto.Asset.prototype.setProfit = function(value) {
   return jspb.Message.setProto3FloatField(this, 5, value);
+};
+
+
+/**
+ * optional float cost = 6;
+ * @return {number}
+ */
+proto.Asset.prototype.getCost = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.Asset} returns this
+ */
+proto.Asset.prototype.setCost = function(value) {
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
