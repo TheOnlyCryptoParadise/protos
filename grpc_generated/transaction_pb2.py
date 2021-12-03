@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"/\n\nBotAddress\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x12\n\nbotAddress\x18\x02 \x01(\t\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\";\n\x0cTransactions\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1c\n\x06trades\x18\x02 \x03(\x0b\x32\x0c.Transaction*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32\x94\x01\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nOpenTrades\x12\x0b.BotAddress\x1a\x0c.BotResponseb\x06proto3'
+  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"/\n\nBotAddress\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x12\n\nbotAddress\x18\x02 \x01(\t\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\";\n\x0cTransactions\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1c\n\x06trades\x18\x02 \x03(\x0b\x32\x0c.Transaction\"y\n\x13TransactionExtended\x12!\n\x0btransaction\x18\x01 \x01(\x0b\x32\x0c.Transaction\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x02\x12\x13\n\x0b\x63urrentRate\x18\x03 \x01(\x02\x12\x0e\n\x06profit\x18\x04 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x05 \x01(\t\"<\n\x14TransactionsExtended\x12$\n\x06trades\x18\x01 \x03(\x0b\x32\x14.TransactionExtended*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32\x94\x01\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nOpenTrades\x12\x0b.BotAddress\x1a\x0c.BotResponseb\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _TRANSACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=416,
-  serialized_end=478,
+  serialized_start=601,
+  serialized_end=663,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSACTIONTYPE)
 
@@ -264,6 +264,98 @@ _TRANSACTIONS = _descriptor.Descriptor(
   serialized_end=414,
 )
 
+
+_TRANSACTIONEXTENDED = _descriptor.Descriptor(
+  name='TransactionExtended',
+  full_name='TransactionExtended',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='transaction', full_name='TransactionExtended.transaction', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cost', full_name='TransactionExtended.cost', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='currentRate', full_name='TransactionExtended.currentRate', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='profit', full_name='TransactionExtended.profit', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='TransactionExtended.date', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=416,
+  serialized_end=537,
+)
+
+
+_TRANSACTIONSEXTENDED = _descriptor.Descriptor(
+  name='TransactionsExtended',
+  full_name='TransactionsExtended',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trades', full_name='TransactionsExtended.trades', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=539,
+  serialized_end=599,
+)
+
 _TRANSACTIONDETAILS.fields_by_name['type'].enum_type = _TRANSACTIONTYPE
 _TRANSACTIONDETAILS.fields_by_name['status'].enum_type = bot__comm__pb2._OPERATIONSTATUS
 _TRANSACTIONDETAILS.oneofs_by_name['_status'].fields.append(
@@ -271,10 +363,14 @@ _TRANSACTIONDETAILS.oneofs_by_name['_status'].fields.append(
 _TRANSACTIONDETAILS.fields_by_name['status'].containing_oneof = _TRANSACTIONDETAILS.oneofs_by_name['_status']
 _TRANSACTION.fields_by_name['details'].message_type = _TRANSACTIONDETAILS
 _TRANSACTIONS.fields_by_name['trades'].message_type = _TRANSACTION
+_TRANSACTIONEXTENDED.fields_by_name['transaction'].message_type = _TRANSACTION
+_TRANSACTIONSEXTENDED.fields_by_name['trades'].message_type = _TRANSACTIONEXTENDED
 DESCRIPTOR.message_types_by_name['BotAddress'] = _BOTADDRESS
 DESCRIPTOR.message_types_by_name['TransactionDetails'] = _TRANSACTIONDETAILS
 DESCRIPTOR.message_types_by_name['Transaction'] = _TRANSACTION
 DESCRIPTOR.message_types_by_name['Transactions'] = _TRANSACTIONS
+DESCRIPTOR.message_types_by_name['TransactionExtended'] = _TRANSACTIONEXTENDED
+DESCRIPTOR.message_types_by_name['TransactionsExtended'] = _TRANSACTIONSEXTENDED
 DESCRIPTOR.enum_types_by_name['TransactionType'] = _TRANSACTIONTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -306,6 +402,20 @@ Transactions = _reflection.GeneratedProtocolMessageType('Transactions', (_messag
   })
 _sym_db.RegisterMessage(Transactions)
 
+TransactionExtended = _reflection.GeneratedProtocolMessageType('TransactionExtended', (_message.Message,), {
+  'DESCRIPTOR' : _TRANSACTIONEXTENDED,
+  '__module__' : 'transaction_pb2'
+  # @@protoc_insertion_point(class_scope:TransactionExtended)
+  })
+_sym_db.RegisterMessage(TransactionExtended)
+
+TransactionsExtended = _reflection.GeneratedProtocolMessageType('TransactionsExtended', (_message.Message,), {
+  'DESCRIPTOR' : _TRANSACTIONSEXTENDED,
+  '__module__' : 'transaction_pb2'
+  # @@protoc_insertion_point(class_scope:TransactionsExtended)
+  })
+_sym_db.RegisterMessage(TransactionsExtended)
+
 
 
 _TRANSACTIONCOMMUNICATOR = _descriptor.ServiceDescriptor(
@@ -315,8 +425,8 @@ _TRANSACTIONCOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=481,
-  serialized_end=629,
+  serialized_start=666,
+  serialized_end=814,
   methods=[
   _descriptor.MethodDescriptor(
     name='BotStopped',

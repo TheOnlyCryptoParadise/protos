@@ -19,12 +19,12 @@ class StatisticsServiceCommunicatorStub(object):
         self.GetAllUserTransactions = channel.unary_unary(
                 '/StatisticsServiceCommunicator/GetAllUserTransactions',
                 request_serializer=bot__comm__pb2.BotsDataRequest.SerializeToString,
-                response_deserializer=transaction__pb2.Transactions.FromString,
+                response_deserializer=transaction__pb2.TransactionsExtended.FromString,
                 )
         self.GetBotTransactions = channel.unary_unary(
                 '/StatisticsServiceCommunicator/GetBotTransactions',
                 request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
-                response_deserializer=transaction__pb2.Transactions.FromString,
+                response_deserializer=transaction__pb2.TransactionsExtended.FromString,
                 )
         self.GetBotStatistics = channel.unary_unary(
                 '/StatisticsServiceCommunicator/GetBotStatistics',
@@ -82,12 +82,12 @@ def add_StatisticsServiceCommunicatorServicer_to_server(servicer, server):
             'GetAllUserTransactions': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAllUserTransactions,
                     request_deserializer=bot__comm__pb2.BotsDataRequest.FromString,
-                    response_serializer=transaction__pb2.Transactions.SerializeToString,
+                    response_serializer=transaction__pb2.TransactionsExtended.SerializeToString,
             ),
             'GetBotTransactions': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotTransactions,
                     request_deserializer=bot__comm__pb2.BotRequest.FromString,
-                    response_serializer=transaction__pb2.Transactions.SerializeToString,
+                    response_serializer=transaction__pb2.TransactionsExtended.SerializeToString,
             ),
             'GetBotStatistics': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotStatistics,
@@ -127,7 +127,7 @@ class StatisticsServiceCommunicator(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetAllUserTransactions',
             bot__comm__pb2.BotsDataRequest.SerializeToString,
-            transaction__pb2.Transactions.FromString,
+            transaction__pb2.TransactionsExtended.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -144,7 +144,7 @@ class StatisticsServiceCommunicator(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetBotTransactions',
             bot__comm__pb2.BotRequest.SerializeToString,
-            transaction__pb2.Transactions.FromString,
+            transaction__pb2.TransactionsExtended.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
