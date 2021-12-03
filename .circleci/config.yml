@@ -1,0 +1,28 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.2
+
+workflows:
+  main:
+    jobs:
+      - build-archive
+
+jobs:
+  build-archive:
+    docker:
+      - image: cimg/python:3.8
+    steps:
+      - checkout
+      # - python/install-packages:
+      #     pkg-manager: pip
+      #     # app-dir: ~/project/package-directory/  # If you're requirements.txt isn't in the root directory.
+      #     pip-dependency-file: requirements.txt
+      # - python/install-packages:
+      #     pkg-manager: pip
+      #     args: build
+      - run:
+          name: create archive
+          command: mkdir dist && tar -cvf dist/grpc_generated.tar grpc_generated
+      - store_artifacts:
+          path: dist/

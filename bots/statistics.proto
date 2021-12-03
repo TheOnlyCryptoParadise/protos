@@ -5,8 +5,8 @@ import "bot_comm.proto";
 import "google/protobuf/timestamp.proto";
 
 service StatisticsServiceCommunicator{
-  rpc GetAllUserTransactions(BotsDataRequest) returns (Transactions) {};
-  rpc GetBotTransactions(BotRequest) returns (Transactions) {};
+  rpc GetAllUserTransactions(BotsDataRequest) returns (TransactionsExtended) {};
+  rpc GetBotTransactions(BotRequest) returns (TransactionsExtended) {};
 
   rpc GetBotStatistics(BotRequest) returns(BotStatistics) {};
   rpc GetBotsOverallStatistics(BotsDataRequest) returns(OverallStatistics){};
@@ -25,11 +25,11 @@ message BotStatistics{
 message Asset{
   string pair = 1;
   double amount = 2;
-  double buyRate = 3; //kurs po jakim kupiono
-  double currentRate = 4;
-  double buyValue = 5; // buyRate * amount
-  double currentValue = 6; // currentRate * amount
-  float profit = 7;
+  //double buyRate = 3; //kurs po jakim kupiono
+  double currentRate = 3;
+ // double buyValue = 5; // buyRate * amount
+  double currentValue = 4; // currentRate * amount
+  float profit = 5;
 }
 
 message BotAsset{
@@ -44,7 +44,7 @@ message UserAssets{
 message OverallStatistics{
   double totalProfit = 1;
   double totalBalance = 2;
-  google.protobuf.Timestamp lastTradeTime = 3;
+  string lastTradeTime = 3;
   string bestBotName = 4;
   string worstBotName = 5;
   int32 realisedTrades = 6;

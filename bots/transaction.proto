@@ -40,3 +40,15 @@ message Transactions {
     uint64 botId = 1;
     repeated Transaction trades = 2;
 }
+
+message TransactionExtended {
+  Transaction transaction = 1;
+  float cost = 2;
+  float currentRate = 3;
+  float profit = 4;
+  string date = 5;
+}
+
+message TransactionsExtended {
+    repeated TransactionExtended trades = 1;
+}
