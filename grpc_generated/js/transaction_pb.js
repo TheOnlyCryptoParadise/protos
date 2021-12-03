@@ -811,7 +811,7 @@ proto.Transaction.prototype.hasDetails = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.Transactions.repeatedFields_ = [1];
+proto.Transactions.repeatedFields_ = [2];
 
 
 
@@ -844,6 +844,7 @@ proto.Transactions.prototype.toObject = function(opt_includeInstance) {
  */
 proto.Transactions.toObject = function(includeInstance, msg) {
   var f, obj = {
+    botid: jspb.Message.getFieldWithDefault(msg, 1, 0),
     tradesList: jspb.Message.toObjectList(msg.getTradesList(),
     proto.Transaction.toObject, includeInstance)
   };
@@ -883,6 +884,10 @@ proto.Transactions.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setBotid(value);
+      break;
+    case 2:
       var value = new proto.Transaction;
       reader.readMessage(value,proto.Transaction.deserializeBinaryFromReader);
       msg.addTrades(value);
@@ -916,10 +921,17 @@ proto.Transactions.prototype.serializeBinary = function() {
  */
 proto.Transactions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getBotid();
+  if (f !== 0) {
+    writer.writeUint64(
+      1,
+      f
+    );
+  }
   f = message.getTradesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      1,
+      2,
       f,
       proto.Transaction.serializeBinaryToWriter
     );
@@ -928,12 +940,30 @@ proto.Transactions.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * repeated Transaction trades = 1;
+ * optional uint64 botId = 1;
+ * @return {number}
+ */
+proto.Transactions.prototype.getBotid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.Transactions} returns this
+ */
+proto.Transactions.prototype.setBotid = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * repeated Transaction trades = 2;
  * @return {!Array<!proto.Transaction>}
  */
 proto.Transactions.prototype.getTradesList = function() {
   return /** @type{!Array<!proto.Transaction>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.Transaction, 1));
+    jspb.Message.getRepeatedWrapperField(this, proto.Transaction, 2));
 };
 
 
@@ -942,7 +972,7 @@ proto.Transactions.prototype.getTradesList = function() {
  * @return {!proto.Transactions} returns this
 */
 proto.Transactions.prototype.setTradesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -952,7 +982,7 @@ proto.Transactions.prototype.setTradesList = function(value) {
  * @return {!proto.Transaction}
  */
 proto.Transactions.prototype.addTrades = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.Transaction, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.Transaction, opt_index);
 };
 
 

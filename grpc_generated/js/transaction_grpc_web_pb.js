@@ -193,5 +193,66 @@ proto.TransactionCommunicatorPromiseClient.prototype.botRemoved =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BotAddress,
+ *   !proto.BotResponse>}
+ */
+const methodDescriptor_TransactionCommunicator_OpenTrades = new grpc.web.MethodDescriptor(
+  '/TransactionCommunicator/OpenTrades',
+  grpc.web.MethodType.UNARY,
+  proto.BotAddress,
+  bot_comm_pb.BotResponse,
+  /**
+   * @param {!proto.BotAddress} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  bot_comm_pb.BotResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BotAddress} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.BotResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.BotResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.TransactionCommunicatorClient.prototype.openTrades =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/TransactionCommunicator/OpenTrades',
+      request,
+      metadata || {},
+      methodDescriptor_TransactionCommunicator_OpenTrades,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BotAddress} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.BotResponse>}
+ *     Promise that resolves to the response
+ */
+proto.TransactionCommunicatorPromiseClient.prototype.openTrades =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/TransactionCommunicator/OpenTrades',
+      request,
+      metadata || {},
+      methodDescriptor_TransactionCommunicator_OpenTrades);
+};
+
+
 module.exports = proto;
 

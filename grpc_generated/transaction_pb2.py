@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"/\n\nBotAddress\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x12\n\nbotAddress\x18\x02 \x01(\t\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\",\n\x0cTransactions\x12\x1c\n\x06trades\x18\x01 \x03(\x0b\x32\x0c.Transaction*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32\x94\x01\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nOpenTrades\x12\x0b.BotAddress\x1a\x0c.BotResponseb\x06proto3'
+  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"/\n\nBotAddress\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x12\n\nbotAddress\x18\x02 \x01(\t\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\";\n\x0cTransactions\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1c\n\x06trades\x18\x02 \x03(\x0b\x32\x0c.Transaction*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32\x94\x01\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nOpenTrades\x12\x0b.BotAddress\x1a\x0c.BotResponseb\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _TRANSACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=401,
-  serialized_end=463,
+  serialized_start=416,
+  serialized_end=478,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSACTIONTYPE)
 
@@ -235,8 +235,15 @@ _TRANSACTIONS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trades', full_name='Transactions.trades', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='botId', full_name='Transactions.botId', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='trades', full_name='Transactions.trades', index=1,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -254,7 +261,7 @@ _TRANSACTIONS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=355,
-  serialized_end=399,
+  serialized_end=414,
 )
 
 _TRANSACTIONDETAILS.fields_by_name['type'].enum_type = _TRANSACTIONTYPE
@@ -308,8 +315,8 @@ _TRANSACTIONCOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=466,
-  serialized_end=614,
+  serialized_start=481,
+  serialized_end=629,
   methods=[
   _descriptor.MethodDescriptor(
     name='BotStopped',

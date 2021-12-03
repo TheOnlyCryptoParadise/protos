@@ -37,5 +37,6 @@ message Transaction{
 }
 
 message Transactions {
-    repeated Transaction trades = 1;
+    uint64 botId = 1;
+    repeated Transaction trades = 2;
 }

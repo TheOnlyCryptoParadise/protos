@@ -17,28 +17,28 @@ class BotCommunicatorStub(object):
         """
         self.RemoveBot = channel.unary_unary(
                 '/BotCommunicator/RemoveBot',
-                request_serializer=bot__comm__pb2.Empty.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.ResumeBot = channel.unary_unary(
                 '/BotCommunicator/ResumeBot',
-                request_serializer=bot__comm__pb2.Empty.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.PauseBot = channel.unary_unary(
                 '/BotCommunicator/PauseBot',
-                request_serializer=bot__comm__pb2.Empty.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.StopBot = channel.unary_unary(
                 '/BotCommunicator/StopBot',
-                request_serializer=bot__comm__pb2.Empty.SerializeToString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.Ping = channel.unary_unary(
                 '/BotCommunicator/Ping',
-                request_serializer=bot__comm__pb2.Empty.SerializeToString,
-                response_deserializer=bot__comm__pb2.Empty.FromString,
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
+                response_deserializer=bot__comm__pb2.BotResponse.FromString,
                 )
         self.ResponseForRequestedTrade = channel.unary_unary(
                 '/BotCommunicator/ResponseForRequestedTrade',
@@ -102,28 +102,28 @@ def add_BotCommunicatorServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'RemoveBot': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveBot,
-                    request_deserializer=bot__comm__pb2.Empty.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'ResumeBot': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeBot,
-                    request_deserializer=bot__comm__pb2.Empty.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'PauseBot': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseBot,
-                    request_deserializer=bot__comm__pb2.Empty.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'StopBot': grpc.unary_unary_rpc_method_handler(
                     servicer.StopBot,
-                    request_deserializer=bot__comm__pb2.Empty.FromString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=bot__comm__pb2.Empty.FromString,
-                    response_serializer=bot__comm__pb2.Empty.SerializeToString,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
+                    response_serializer=bot__comm__pb2.BotResponse.SerializeToString,
             ),
             'ResponseForRequestedTrade': grpc.unary_unary_rpc_method_handler(
                     servicer.ResponseForRequestedTrade,
@@ -157,7 +157,7 @@ class BotCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/RemoveBot',
-            bot__comm__pb2.Empty.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -174,7 +174,7 @@ class BotCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/ResumeBot',
-            bot__comm__pb2.Empty.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -191,7 +191,7 @@ class BotCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/PauseBot',
-            bot__comm__pb2.Empty.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -208,7 +208,7 @@ class BotCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/StopBot',
-            bot__comm__pb2.Empty.SerializeToString,
+            bot__comm__pb2.BotRequest.SerializeToString,
             bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -225,8 +225,8 @@ class BotCommunicator(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/BotCommunicator/Ping',
-            bot__comm__pb2.Empty.SerializeToString,
-            bot__comm__pb2.Empty.FromString,
+            bot__comm__pb2.BotRequest.SerializeToString,
+            bot__comm__pb2.BotResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
