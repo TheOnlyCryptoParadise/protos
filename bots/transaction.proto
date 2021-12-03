@@ -39,3 +39,15 @@ message Transaction{
 message Transactions {
     repeated Transaction trades = 1;
 }
+
+message TransactionExtended {
+  Transaction transaction = 1;
+  float cost = 2;
+  float currentRate = 3;
+  float profit = 4;
+  string date = 5;
+}
+
+message TransactionsExtended {
+    repeated TransactionExtended trades = 1;
+}
