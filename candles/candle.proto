@@ -1,10 +1,21 @@
 syntax = "proto3";
+
 package candles;
 
 message Candle {
   string exchange = 1;
   string pair = 2;
   string size = 3;
+  double open = 4;
+  double high = 5;
+  double low = 6;
+  double close = 7;
+  double volume = 8;
+  int64 timestamp = 9;
+
+}
+
+message CandleData {
   double open = 4;
   double high = 5;
   double low = 6;

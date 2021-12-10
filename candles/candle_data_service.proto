@@ -1,0 +1,42 @@
+syntax = "proto3";
+package candles;
+import "candle.proto";
+
+service CandleDataService{
+    rpc GetLiveInfo(LiveInfoRequest) returns (LiveInfoResponse) {};
+    rpc GetCandles(CandlesRequest) returns (CandlesResponse) {};
+
+}
+
+
+message LiveInfoRequest{
+    string exchange_name = 1;
+    repeated string pairs = 2;
+}
+
+message LiveInfoResponse{
+    message PairLiveInfo{
+        string name = 1;
+        double last = 2;
+        double volume = 3;
+    }
+    string exchange_name = 1;
+    repeated PairLiveInfo pairs = 2;
+
+}
+
+
+message CandlesRequest{
+    string exchange_name = 1;
+    string currency_pair = 2;
+    string candle_size = 3;
+    optional uint64 last_n_candles = 4;
+    optional uint64 time_start = 5;
+    optional uint64 time_end = 6;
+}
+
+message CandlesResponse{
+    string exchange_name = 1;
+    string candle_size = 2;
+    repeated CandleData candles = 3;
+}
