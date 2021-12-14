@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "transaction.proto";
 import "bot_comm.proto";
-import "google/protobuf/timestamp.proto";
 
 service StatisticsServiceCommunicator{
   rpc GetAllUserTransactions(BotsDataRequest) returns (TransactionsExtended) {};
@@ -18,16 +17,13 @@ message BotStatistics{
   uint64 botId = 1;
   double profit = 2; // someday money-message, not double
   repeated Asset assets = 3; //repeated works like a list in python
-  //int32 uptime = 4; // how long it lives from creation time
   string sinceLastTrade = 4; //how long ago last trade was made
 }
 
 message Asset{
   string pair = 1;
   double amount = 2;
-  //double buyRate = 3; //kurs po jakim kupiono
   double currentRate = 3;
- // double buyValue = 5; // buyRate * amount
   double currentValue = 4; // currentRate * amount
   float profit = 5;
   float cost = 6;
@@ -39,7 +35,7 @@ message BotAsset{
 }
 
 message UserAssets{
-  repeated BotAsset assets = 1;
+  repeated Asset assets = 1;
 }
 
 message OverallStatistics{
