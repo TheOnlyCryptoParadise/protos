@@ -19,8 +19,6 @@ grpc.web = require('grpc-web');
 var transaction_pb = require('./transaction_pb.js')
 
 var bot_comm_pb = require('./bot_comm_pb.js')
-
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js')
 const proto = require('./statistics_pb.js');
 
 /**

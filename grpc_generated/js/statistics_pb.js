@@ -19,8 +19,6 @@ var transaction_pb = require('./transaction_pb.js');
 goog.object.extend(proto, transaction_pb);
 var bot_comm_pb = require('./bot_comm_pb.js');
 goog.object.extend(proto, bot_comm_pb);
-var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
-goog.object.extend(proto, google_protobuf_timestamp_pb);
 goog.exportSymbol('proto.Asset', null, global);
 goog.exportSymbol('proto.BotAsset', null, global);
 goog.exportSymbol('proto.BotStatistics', null, global);
@@ -891,7 +889,7 @@ proto.UserAssets.prototype.toObject = function(opt_includeInstance) {
 proto.UserAssets.toObject = function(includeInstance, msg) {
   var f, obj = {
     assetsList: jspb.Message.toObjectList(msg.getAssetsList(),
-    proto.BotAsset.toObject, includeInstance)
+    proto.Asset.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -929,8 +927,8 @@ proto.UserAssets.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.BotAsset;
-      reader.readMessage(value,proto.BotAsset.deserializeBinaryFromReader);
+      var value = new proto.Asset;
+      reader.readMessage(value,proto.Asset.deserializeBinaryFromReader);
       msg.addAssets(value);
       break;
     default:
@@ -967,24 +965,24 @@ proto.UserAssets.serializeBinaryToWriter = function(message, writer) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.BotAsset.serializeBinaryToWriter
+      proto.Asset.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * repeated BotAsset assets = 1;
- * @return {!Array<!proto.BotAsset>}
+ * repeated Asset assets = 1;
+ * @return {!Array<!proto.Asset>}
  */
 proto.UserAssets.prototype.getAssetsList = function() {
-  return /** @type{!Array<!proto.BotAsset>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.BotAsset, 1));
+  return /** @type{!Array<!proto.Asset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.Asset, 1));
 };
 
 
 /**
- * @param {!Array<!proto.BotAsset>} value
+ * @param {!Array<!proto.Asset>} value
  * @return {!proto.UserAssets} returns this
 */
 proto.UserAssets.prototype.setAssetsList = function(value) {
@@ -993,12 +991,12 @@ proto.UserAssets.prototype.setAssetsList = function(value) {
 
 
 /**
- * @param {!proto.BotAsset=} opt_value
+ * @param {!proto.Asset=} opt_value
  * @param {number=} opt_index
- * @return {!proto.BotAsset}
+ * @return {!proto.Asset}
  */
 proto.UserAssets.prototype.addAssets = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.BotAsset, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.Asset, opt_index);
 };
 
 
