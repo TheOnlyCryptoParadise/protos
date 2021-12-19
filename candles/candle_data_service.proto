@@ -5,9 +5,17 @@ import "candle.proto";
 service CandleDataService{
     rpc GetLiveInfo(LiveInfoRequest) returns (LiveInfoResponse) {};
     rpc GetCandles(CandlesRequest) returns (CandlesResponse) {};
+    rpc GetAvailablePairs(PairsRequest) returns (PairResponse) {};
 
 }
 
+message PairsRequest{
+    string exchange = 1;
+}
+
+message PairsResponse{
+    repeated string pairs = 1;
+}
 
 message LiveInfoRequest{
     string exchange_name = 1;
