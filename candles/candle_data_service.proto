@@ -5,7 +5,7 @@ import "candle.proto";
 service CandleDataService{
     rpc GetLiveInfo(LiveInfoRequest) returns (LiveInfoResponse) {};
     rpc GetCandles(CandlesRequest) returns (CandlesResponse) {};
-    rpc GetAvailablePairs(PairsRequest) returns (PairResponse) {};
+    rpc GetAvailablePairs(PairsRequest) returns (PairsResponse) {};
 
 }
 
