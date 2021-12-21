@@ -37,8 +37,7 @@ message Transaction{
 }
 
 message Transactions {
-    uint64 botId = 1;
-    repeated Transaction trades = 2;
+    repeated Transaction trades = 1;
 }
 
 message TransactionExtended {
@@ -65,6 +64,12 @@ message Trade {
   float sellValue = 9;
 }
 
+message Profit {
+  double profit = 1;
+  string time = 2;
+}
+
 message Trades {
   repeated Trade trades = 1;
+  repeated Profit profits = 2;
 }
