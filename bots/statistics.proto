@@ -7,6 +7,12 @@ service StatisticsServiceCommunicator{
   rpc GetAllUserTransactions(BotsDataRequest) returns (TransactionsExtended) {};
   rpc GetBotTransactions(BotRequest) returns (TransactionsExtended) {};
 
+  rpc GetUserOpenTransactions(BotsDataRequest) returns (TransactionsExtended) {};
+  rpc GetBotOpenTransactions(BotRequest) returns (TransactionsExtended) {};
+
+  rpc GetUserTrades(BotsDataRequest) returns (Trades) {};
+  rpc GetBotTrades(BotRequest) returns (Trades) {};
+
   rpc GetBotStatistics(BotRequest) returns(BotStatistics) {};
   rpc GetBotsOverallStatistics(BotsDataRequest) returns(OverallStatistics){};
 
