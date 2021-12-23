@@ -198,6 +198,250 @@ proto.StatisticsServiceCommunicatorPromiseClient.prototype.getBotTransactions =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BotsDataRequest,
+ *   !proto.TransactionsExtended>}
+ */
+const methodDescriptor_StatisticsServiceCommunicator_GetUserOpenTransactions = new grpc.web.MethodDescriptor(
+  '/StatisticsServiceCommunicator/GetUserOpenTransactions',
+  grpc.web.MethodType.UNARY,
+  bot_comm_pb.BotsDataRequest,
+  transaction_pb.TransactionsExtended,
+  /**
+   * @param {!proto.BotsDataRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  transaction_pb.TransactionsExtended.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BotsDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.TransactionsExtended)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.TransactionsExtended>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.StatisticsServiceCommunicatorClient.prototype.getUserOpenTransactions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetUserOpenTransactions',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetUserOpenTransactions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BotsDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.TransactionsExtended>}
+ *     Promise that resolves to the response
+ */
+proto.StatisticsServiceCommunicatorPromiseClient.prototype.getUserOpenTransactions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetUserOpenTransactions',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetUserOpenTransactions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BotRequest,
+ *   !proto.TransactionsExtended>}
+ */
+const methodDescriptor_StatisticsServiceCommunicator_GetBotOpenTransactions = new grpc.web.MethodDescriptor(
+  '/StatisticsServiceCommunicator/GetBotOpenTransactions',
+  grpc.web.MethodType.UNARY,
+  bot_comm_pb.BotRequest,
+  transaction_pb.TransactionsExtended,
+  /**
+   * @param {!proto.BotRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  transaction_pb.TransactionsExtended.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BotRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.TransactionsExtended)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.TransactionsExtended>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.StatisticsServiceCommunicatorClient.prototype.getBotOpenTransactions =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetBotOpenTransactions',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetBotOpenTransactions,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BotRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.TransactionsExtended>}
+ *     Promise that resolves to the response
+ */
+proto.StatisticsServiceCommunicatorPromiseClient.prototype.getBotOpenTransactions =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetBotOpenTransactions',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetBotOpenTransactions);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BotsDataRequest,
+ *   !proto.Trades>}
+ */
+const methodDescriptor_StatisticsServiceCommunicator_GetUserTrades = new grpc.web.MethodDescriptor(
+  '/StatisticsServiceCommunicator/GetUserTrades',
+  grpc.web.MethodType.UNARY,
+  bot_comm_pb.BotsDataRequest,
+  transaction_pb.Trades,
+  /**
+   * @param {!proto.BotsDataRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  transaction_pb.Trades.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BotsDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Trades)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Trades>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.StatisticsServiceCommunicatorClient.prototype.getUserTrades =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetUserTrades',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetUserTrades,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BotsDataRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Trades>}
+ *     Promise that resolves to the response
+ */
+proto.StatisticsServiceCommunicatorPromiseClient.prototype.getUserTrades =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetUserTrades',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetUserTrades);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.BotRequest,
+ *   !proto.Trades>}
+ */
+const methodDescriptor_StatisticsServiceCommunicator_GetBotTrades = new grpc.web.MethodDescriptor(
+  '/StatisticsServiceCommunicator/GetBotTrades',
+  grpc.web.MethodType.UNARY,
+  bot_comm_pb.BotRequest,
+  transaction_pb.Trades,
+  /**
+   * @param {!proto.BotRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  transaction_pb.Trades.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.BotRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Trades)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Trades>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.StatisticsServiceCommunicatorClient.prototype.getBotTrades =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetBotTrades',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetBotTrades,
+      callback);
+};
+
+
+/**
+ * @param {!proto.BotRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Trades>}
+ *     Promise that resolves to the response
+ */
+proto.StatisticsServiceCommunicatorPromiseClient.prototype.getBotTrades =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/StatisticsServiceCommunicator/GetBotTrades',
+      request,
+      metadata || {},
+      methodDescriptor_StatisticsServiceCommunicator_GetBotTrades);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.BotRequest,
  *   !proto.BotStatistics>}
  */

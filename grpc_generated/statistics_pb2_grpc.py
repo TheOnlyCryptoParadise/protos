@@ -26,6 +26,26 @@ class StatisticsServiceCommunicatorStub(object):
                 request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
                 response_deserializer=transaction__pb2.TransactionsExtended.FromString,
                 )
+        self.GetUserOpenTransactions = channel.unary_unary(
+                '/StatisticsServiceCommunicator/GetUserOpenTransactions',
+                request_serializer=bot__comm__pb2.BotsDataRequest.SerializeToString,
+                response_deserializer=transaction__pb2.TransactionsExtended.FromString,
+                )
+        self.GetBotOpenTransactions = channel.unary_unary(
+                '/StatisticsServiceCommunicator/GetBotOpenTransactions',
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
+                response_deserializer=transaction__pb2.TransactionsExtended.FromString,
+                )
+        self.GetUserTrades = channel.unary_unary(
+                '/StatisticsServiceCommunicator/GetUserTrades',
+                request_serializer=bot__comm__pb2.BotsDataRequest.SerializeToString,
+                response_deserializer=transaction__pb2.Trades.FromString,
+                )
+        self.GetBotTrades = channel.unary_unary(
+                '/StatisticsServiceCommunicator/GetBotTrades',
+                request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
+                response_deserializer=transaction__pb2.Trades.FromString,
+                )
         self.GetBotStatistics = channel.unary_unary(
                 '/StatisticsServiceCommunicator/GetBotStatistics',
                 request_serializer=bot__comm__pb2.BotRequest.SerializeToString,
@@ -53,6 +73,30 @@ class StatisticsServiceCommunicatorServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetBotTransactions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetUserOpenTransactions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBotOpenTransactions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetUserTrades(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBotTrades(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -88,6 +132,26 @@ def add_StatisticsServiceCommunicatorServicer_to_server(servicer, server):
                     servicer.GetBotTransactions,
                     request_deserializer=bot__comm__pb2.BotRequest.FromString,
                     response_serializer=transaction__pb2.TransactionsExtended.SerializeToString,
+            ),
+            'GetUserOpenTransactions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUserOpenTransactions,
+                    request_deserializer=bot__comm__pb2.BotsDataRequest.FromString,
+                    response_serializer=transaction__pb2.TransactionsExtended.SerializeToString,
+            ),
+            'GetBotOpenTransactions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBotOpenTransactions,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
+                    response_serializer=transaction__pb2.TransactionsExtended.SerializeToString,
+            ),
+            'GetUserTrades': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUserTrades,
+                    request_deserializer=bot__comm__pb2.BotsDataRequest.FromString,
+                    response_serializer=transaction__pb2.Trades.SerializeToString,
+            ),
+            'GetBotTrades': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBotTrades,
+                    request_deserializer=bot__comm__pb2.BotRequest.FromString,
+                    response_serializer=transaction__pb2.Trades.SerializeToString,
             ),
             'GetBotStatistics': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBotStatistics,
@@ -145,6 +209,74 @@ class StatisticsServiceCommunicator(object):
         return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetBotTransactions',
             bot__comm__pb2.BotRequest.SerializeToString,
             transaction__pb2.TransactionsExtended.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetUserOpenTransactions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetUserOpenTransactions',
+            bot__comm__pb2.BotsDataRequest.SerializeToString,
+            transaction__pb2.TransactionsExtended.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetBotOpenTransactions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetBotOpenTransactions',
+            bot__comm__pb2.BotRequest.SerializeToString,
+            transaction__pb2.TransactionsExtended.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetUserTrades(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetUserTrades',
+            bot__comm__pb2.BotsDataRequest.SerializeToString,
+            transaction__pb2.Trades.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetBotTrades(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/StatisticsServiceCommunicator/GetBotTrades',
+            bot__comm__pb2.BotRequest.SerializeToString,
+            transaction__pb2.Trades.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

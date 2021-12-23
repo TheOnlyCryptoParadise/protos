@@ -24,6 +24,11 @@ class CandleDataServiceStub(object):
                 request_serializer=candle__data__service__pb2.CandlesRequest.SerializeToString,
                 response_deserializer=candle__data__service__pb2.CandlesResponse.FromString,
                 )
+        self.GetAvailablePairs = channel.unary_unary(
+                '/candles.CandleDataService/GetAvailablePairs',
+                request_serializer=candle__data__service__pb2.PairsRequest.SerializeToString,
+                response_deserializer=candle__data__service__pb2.PairsResponse.FromString,
+                )
 
 
 class CandleDataServiceServicer(object):
@@ -41,6 +46,12 @@ class CandleDataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAvailablePairs(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CandleDataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -53,6 +64,11 @@ def add_CandleDataServiceServicer_to_server(servicer, server):
                     servicer.GetCandles,
                     request_deserializer=candle__data__service__pb2.CandlesRequest.FromString,
                     response_serializer=candle__data__service__pb2.CandlesResponse.SerializeToString,
+            ),
+            'GetAvailablePairs': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAvailablePairs,
+                    request_deserializer=candle__data__service__pb2.PairsRequest.FromString,
+                    response_serializer=candle__data__service__pb2.PairsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,5 +111,22 @@ class CandleDataService(object):
         return grpc.experimental.unary_unary(request, target, '/candles.CandleDataService/GetCandles',
             candle__data__service__pb2.CandlesRequest.SerializeToString,
             candle__data__service__pb2.CandlesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAvailablePairs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/candles.CandleDataService/GetAvailablePairs',
+            candle__data__service__pb2.PairsRequest.SerializeToString,
+            candle__data__service__pb2.PairsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -20,11 +20,75 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x19\x63\x61ndle_data_service.proto\x12\x07\x63\x61ndles\x1a\x0c\x63\x61ndle.proto\"7\n\x0fLiveInfoRequest\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\r\n\x05pairs\x18\x02 \x03(\t\"\x9c\x01\n\x10LiveInfoResponse\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\x35\n\x05pairs\x18\x02 \x03(\x0b\x32&.candles.LiveInfoResponse.PairLiveInfo\x1a:\n\x0cPairLiveInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04last\x18\x02 \x01(\x01\x12\x0e\n\x06volume\x18\x03 \x01(\x01\"\xcf\x01\n\x0e\x43\x61ndlesRequest\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\x15\n\rcurrency_pair\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61ndle_size\x18\x03 \x01(\t\x12\x1b\n\x0elast_n_candles\x18\x04 \x01(\x04H\x00\x88\x01\x01\x12\x17\n\ntime_start\x18\x05 \x01(\x04H\x01\x88\x01\x01\x12\x15\n\x08time_end\x18\x06 \x01(\x04H\x02\x88\x01\x01\x42\x11\n\x0f_last_n_candlesB\r\n\x0b_time_startB\x0b\n\t_time_end\"c\n\x0f\x43\x61ndlesResponse\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\x13\n\x0b\x63\x61ndle_size\x18\x02 \x01(\t\x12$\n\x07\x63\x61ndles\x18\x03 \x03(\x0b\x32\x13.candles.CandleData2\x9c\x01\n\x11\x43\x61ndleDataService\x12\x44\n\x0bGetLiveInfo\x12\x18.candles.LiveInfoRequest\x1a\x19.candles.LiveInfoResponse\"\x00\x12\x41\n\nGetCandles\x12\x17.candles.CandlesRequest\x1a\x18.candles.CandlesResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x19\x63\x61ndle_data_service.proto\x12\x07\x63\x61ndles\x1a\x0c\x63\x61ndle.proto\" \n\x0cPairsRequest\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\"\x1e\n\rPairsResponse\x12\r\n\x05pairs\x18\x01 \x03(\t\"7\n\x0fLiveInfoRequest\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\r\n\x05pairs\x18\x02 \x03(\t\"\x9c\x01\n\x10LiveInfoResponse\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\x35\n\x05pairs\x18\x02 \x03(\x0b\x32&.candles.LiveInfoResponse.PairLiveInfo\x1a:\n\x0cPairLiveInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04last\x18\x02 \x01(\x01\x12\x0e\n\x06volume\x18\x03 \x01(\x01\"\xcf\x01\n\x0e\x43\x61ndlesRequest\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\x15\n\rcurrency_pair\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61ndle_size\x18\x03 \x01(\t\x12\x1b\n\x0elast_n_candles\x18\x04 \x01(\x04H\x00\x88\x01\x01\x12\x17\n\ntime_start\x18\x05 \x01(\x04H\x01\x88\x01\x01\x12\x15\n\x08time_end\x18\x06 \x01(\x04H\x02\x88\x01\x01\x42\x11\n\x0f_last_n_candlesB\r\n\x0b_time_startB\x0b\n\t_time_end\"c\n\x0f\x43\x61ndlesResponse\x12\x15\n\rexchange_name\x18\x01 \x01(\t\x12\x13\n\x0b\x63\x61ndle_size\x18\x02 \x01(\t\x12$\n\x07\x63\x61ndles\x18\x03 \x03(\x0b\x32\x13.candles.CandleData2\xe2\x01\n\x11\x43\x61ndleDataService\x12\x44\n\x0bGetLiveInfo\x12\x18.candles.LiveInfoRequest\x1a\x19.candles.LiveInfoResponse\"\x00\x12\x41\n\nGetCandles\x12\x17.candles.CandlesRequest\x1a\x18.candles.CandlesResponse\"\x00\x12\x44\n\x11GetAvailablePairs\x12\x15.candles.PairsRequest\x1a\x16.candles.PairsResponse\"\x00\x62\x06proto3'
   ,
   dependencies=[candle__pb2.DESCRIPTOR,])
 
 
+
+
+_PAIRSREQUEST = _descriptor.Descriptor(
+  name='PairsRequest',
+  full_name='candles.PairsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='candles.PairsRequest.exchange', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=52,
+  serialized_end=84,
+)
+
+
+_PAIRSRESPONSE = _descriptor.Descriptor(
+  name='PairsResponse',
+  full_name='candles.PairsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pairs', full_name='candles.PairsResponse.pairs', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=86,
+  serialized_end=116,
+)
 
 
 _LIVEINFOREQUEST = _descriptor.Descriptor(
@@ -61,8 +125,8 @@ _LIVEINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=52,
-  serialized_end=107,
+  serialized_start=118,
+  serialized_end=173,
 )
 
 
@@ -107,8 +171,8 @@ _LIVEINFORESPONSE_PAIRLIVEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=208,
-  serialized_end=266,
+  serialized_start=274,
+  serialized_end=332,
 )
 
 _LIVEINFORESPONSE = _descriptor.Descriptor(
@@ -145,8 +209,8 @@ _LIVEINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=110,
-  serialized_end=266,
+  serialized_start=176,
+  serialized_end=332,
 )
 
 
@@ -227,8 +291,8 @@ _CANDLESREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=269,
-  serialized_end=476,
+  serialized_start=335,
+  serialized_end=542,
 )
 
 
@@ -273,8 +337,8 @@ _CANDLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=478,
-  serialized_end=577,
+  serialized_start=544,
+  serialized_end=643,
 )
 
 _LIVEINFORESPONSE_PAIRLIVEINFO.containing_type = _LIVEINFORESPONSE
@@ -289,11 +353,27 @@ _CANDLESREQUEST.oneofs_by_name['_time_end'].fields.append(
   _CANDLESREQUEST.fields_by_name['time_end'])
 _CANDLESREQUEST.fields_by_name['time_end'].containing_oneof = _CANDLESREQUEST.oneofs_by_name['_time_end']
 _CANDLESRESPONSE.fields_by_name['candles'].message_type = candle__pb2._CANDLEDATA
+DESCRIPTOR.message_types_by_name['PairsRequest'] = _PAIRSREQUEST
+DESCRIPTOR.message_types_by_name['PairsResponse'] = _PAIRSRESPONSE
 DESCRIPTOR.message_types_by_name['LiveInfoRequest'] = _LIVEINFOREQUEST
 DESCRIPTOR.message_types_by_name['LiveInfoResponse'] = _LIVEINFORESPONSE
 DESCRIPTOR.message_types_by_name['CandlesRequest'] = _CANDLESREQUEST
 DESCRIPTOR.message_types_by_name['CandlesResponse'] = _CANDLESRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+PairsRequest = _reflection.GeneratedProtocolMessageType('PairsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PAIRSREQUEST,
+  '__module__' : 'candle_data_service_pb2'
+  # @@protoc_insertion_point(class_scope:candles.PairsRequest)
+  })
+_sym_db.RegisterMessage(PairsRequest)
+
+PairsResponse = _reflection.GeneratedProtocolMessageType('PairsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PAIRSRESPONSE,
+  '__module__' : 'candle_data_service_pb2'
+  # @@protoc_insertion_point(class_scope:candles.PairsResponse)
+  })
+_sym_db.RegisterMessage(PairsResponse)
 
 LiveInfoRequest = _reflection.GeneratedProtocolMessageType('LiveInfoRequest', (_message.Message,), {
   'DESCRIPTOR' : _LIVEINFOREQUEST,
@@ -340,8 +420,8 @@ _CANDLEDATASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=580,
-  serialized_end=736,
+  serialized_start=646,
+  serialized_end=872,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetLiveInfo',
@@ -360,6 +440,16 @@ _CANDLEDATASERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CANDLESREQUEST,
     output_type=_CANDLESRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetAvailablePairs',
+    full_name='candles.CandleDataService.GetAvailablePairs',
+    index=2,
+    containing_service=None,
+    input_type=_PAIRSREQUEST,
+    output_type=_PAIRSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
