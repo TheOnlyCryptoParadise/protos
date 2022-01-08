@@ -34,6 +34,7 @@ message Transaction{
   int32 timeout = 3;
   string exchange = 4;
   TransactionDetails details = 5;
+  optional String type = 6;
 }
 
 message Transactions {
