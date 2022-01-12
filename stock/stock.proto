@@ -13,11 +13,13 @@ service StockCommunicator{
 
 message FortuneRequest {
   uint64 userId = 1;
+  optional string exchange = 2;
 }
 
 message Fortune {
   uint64 userId = 1;
-  double fortune = 2; // maybe not float - sth more safe?
+  double fortune = 2; 
+  optional string exchange = 3;
 }
 
 enum StockTransactionType{
