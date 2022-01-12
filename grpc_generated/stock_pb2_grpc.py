@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from . import stock_pb2 as stock__pb2
+import stock_pb2 as stock__pb2
 
 
 class StockCommunicatorStub(object):

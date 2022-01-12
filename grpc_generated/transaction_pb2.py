@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"/\n\nBotAddress\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x12\n\nbotAddress\x18\x02 \x01(\t\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"u\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\";\n\x0cTransactions\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1c\n\x06trades\x18\x02 \x03(\x0b\x32\x0c.Transaction\"y\n\x13TransactionExtended\x12!\n\x0btransaction\x18\x01 \x01(\x0b\x32\x0c.Transaction\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x02\x12\x13\n\x0b\x63urrentRate\x18\x03 \x01(\x02\x12\x0e\n\x06profit\x18\x04 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x05 \x01(\t\"<\n\x14TransactionsExtended\x12$\n\x06trades\x18\x01 \x03(\x0b\x32\x14.TransactionExtended\"\x9c\x01\n\x05Trade\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\r\n\x05\x62otId\x18\x02 \x01(\x04\x12\x0c\n\x04pair\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x01\x12\x0e\n\x06profit\x18\x05 \x01(\x02\x12\x0f\n\x07\x62uyDate\x18\x06 \x01(\t\x12\x10\n\x08sellDate\x18\x07 \x01(\t\x12\x10\n\x08\x62uyValue\x18\x08 \x01(\x02\x12\x11\n\tsellValue\x18\t \x01(\x02\"&\n\x06Profit\x12\x0e\n\x06profit\x18\x01 \x01(\x01\x12\x0c\n\x04time\x18\x02 \x01(\t\":\n\x06Trades\x12\x16\n\x06trades\x18\x01 \x03(\x0b\x32\x06.Trade\x12\x18\n\x07profits\x18\x02 \x03(\x0b\x32\x07.Profit*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32\x94\x01\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nOpenTrades\x12\x0b.BotAddress\x1a\x0c.BotResponseb\x06proto3'
+  serialized_pb=b'\n\x11transaction.proto\x1a\x0e\x62ot_comm.proto\"/\n\nBotAddress\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x12\n\nbotAddress\x18\x02 \x01(\t\"\x93\x01\n\x12TransactionDetails\x12\x0c\n\x04pair\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x12\r\n\x05price\x18\x03 \x01(\x01\x12\x1e\n\x04type\x18\x04 \x01(\x0e\x32\x10.TransactionType\x12%\n\x06status\x18\x05 \x01(\x0e\x32\x10.OperationStatusH\x00\x88\x01\x01\x42\t\n\x07_status\"\x91\x01\n\x0bTransaction\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x0e\n\x06userId\x18\x02 \x01(\x04\x12\x0f\n\x07timeout\x18\x03 \x01(\x05\x12\x10\n\x08\x65xchange\x18\x04 \x01(\t\x12$\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x13.TransactionDetails\x12\x11\n\x04type\x18\x06 \x01(\tH\x00\x88\x01\x01\x42\x07\n\x05_type\";\n\x0cTransactions\x12\r\n\x05\x62otId\x18\x01 \x01(\x04\x12\x1c\n\x06trades\x18\x02 \x03(\x0b\x32\x0c.Transaction\"y\n\x13TransactionExtended\x12!\n\x0btransaction\x18\x01 \x01(\x0b\x32\x0c.Transaction\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x02\x12\x13\n\x0b\x63urrentRate\x18\x03 \x01(\x02\x12\x0e\n\x06profit\x18\x04 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x05 \x01(\t\"<\n\x14TransactionsExtended\x12$\n\x06trades\x18\x01 \x03(\x0b\x32\x14.TransactionExtended\"\x9c\x01\n\x05Trade\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\r\n\x05\x62otId\x18\x02 \x01(\x04\x12\x0c\n\x04pair\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x01\x12\x0e\n\x06profit\x18\x05 \x01(\x02\x12\x0f\n\x07\x62uyDate\x18\x06 \x01(\t\x12\x10\n\x08sellDate\x18\x07 \x01(\t\x12\x10\n\x08\x62uyValue\x18\x08 \x01(\x02\x12\x11\n\tsellValue\x18\t \x01(\x02\"&\n\x06Profit\x12\x0e\n\x06profit\x18\x01 \x01(\x01\x12\x0c\n\x04time\x18\x02 \x01(\t\":\n\x06Trades\x12\x16\n\x06trades\x18\x01 \x03(\x0b\x32\x06.Trade\x12\x18\n\x07profits\x18\x02 \x03(\x0b\x32\x07.Profit*>\n\x0fTransactionType\x12\n\n\x06TO_BUY\x10\x00\x12\x0b\n\x07TO_SELL\x10\x01\x12\x12\n\x0eSTOP_LOSS_SELL\x10\x02\x32\x94\x01\n\x17TransactionCommunicator\x12\'\n\nBotStopped\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nBotRemoved\x12\x0b.BotRequest\x1a\x0c.BotResponse\x12\'\n\nOpenTrades\x12\x0b.BotAddress\x1a\x0c.BotResponseb\x06proto3'
   ,
   dependencies=[bot__comm__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _TRANSACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=860,
-  serialized_end=922,
+  serialized_start=889,
+  serialized_end=951,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSACTIONTYPE)
 
@@ -209,6 +209,13 @@ _TRANSACTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='Transaction.type', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -220,9 +227,14 @@ _TRANSACTION = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='_type', full_name='Transaction._type',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=236,
-  serialized_end=353,
+  serialized_start=237,
+  serialized_end=382,
 )
 
 
@@ -260,8 +272,8 @@ _TRANSACTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=355,
-  serialized_end=414,
+  serialized_start=384,
+  serialized_end=443,
 )
 
 
@@ -320,8 +332,8 @@ _TRANSACTIONEXTENDED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=416,
-  serialized_end=537,
+  serialized_start=445,
+  serialized_end=566,
 )
 
 
@@ -352,8 +364,8 @@ _TRANSACTIONSEXTENDED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=539,
-  serialized_end=599,
+  serialized_start=568,
+  serialized_end=628,
 )
 
 
@@ -440,8 +452,8 @@ _TRADE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=602,
-  serialized_end=758,
+  serialized_start=631,
+  serialized_end=787,
 )
 
 
@@ -479,8 +491,8 @@ _PROFIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=760,
-  serialized_end=798,
+  serialized_start=789,
+  serialized_end=827,
 )
 
 
@@ -518,8 +530,8 @@ _TRADES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=800,
-  serialized_end=858,
+  serialized_start=829,
+  serialized_end=887,
 )
 
 _TRANSACTIONDETAILS.fields_by_name['type'].enum_type = _TRANSACTIONTYPE
@@ -528,6 +540,9 @@ _TRANSACTIONDETAILS.oneofs_by_name['_status'].fields.append(
   _TRANSACTIONDETAILS.fields_by_name['status'])
 _TRANSACTIONDETAILS.fields_by_name['status'].containing_oneof = _TRANSACTIONDETAILS.oneofs_by_name['_status']
 _TRANSACTION.fields_by_name['details'].message_type = _TRANSACTIONDETAILS
+_TRANSACTION.oneofs_by_name['_type'].fields.append(
+  _TRANSACTION.fields_by_name['type'])
+_TRANSACTION.fields_by_name['type'].containing_oneof = _TRANSACTION.oneofs_by_name['_type']
 _TRANSACTIONS.fields_by_name['trades'].message_type = _TRANSACTION
 _TRANSACTIONEXTENDED.fields_by_name['transaction'].message_type = _TRANSACTION
 _TRANSACTIONSEXTENDED.fields_by_name['trades'].message_type = _TRANSACTIONEXTENDED
@@ -617,8 +632,8 @@ _TRANSACTIONCOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=925,
-  serialized_end=1073,
+  serialized_start=954,
+  serialized_end=1102,
   methods=[
   _descriptor.MethodDescriptor(
     name='BotStopped',

@@ -680,7 +680,8 @@ proto.Transaction.toObject = function(includeInstance, msg) {
     userid: jspb.Message.getFieldWithDefault(msg, 2, 0),
     timeout: jspb.Message.getFieldWithDefault(msg, 3, 0),
     exchange: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    details: (f = msg.getDetails()) && proto.TransactionDetails.toObject(includeInstance, f)
+    details: (f = msg.getDetails()) && proto.TransactionDetails.toObject(includeInstance, f),
+    type: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -737,6 +738,10 @@ proto.Transaction.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.TransactionDetails;
       reader.readMessage(value,proto.TransactionDetails.deserializeBinaryFromReader);
       msg.setDetails(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -801,6 +806,13 @@ proto.Transaction.serializeBinaryToWriter = function(message, writer) {
       5,
       f,
       proto.TransactionDetails.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
     );
   }
 };
@@ -912,6 +924,42 @@ proto.Transaction.prototype.clearDetails = function() {
  */
 proto.Transaction.prototype.hasDetails = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string type = 6;
+ * @return {string}
+ */
+proto.Transaction.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Transaction} returns this
+ */
+proto.Transaction.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.Transaction} returns this
+ */
+proto.Transaction.prototype.clearType = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Transaction.prototype.hasType = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

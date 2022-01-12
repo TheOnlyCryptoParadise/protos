@@ -159,7 +159,8 @@ proto.FortuneRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.FortuneRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    userid: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    userid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    exchange: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -200,6 +201,10 @@ proto.FortuneRequest.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readUint64());
       msg.setUserid(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExchange(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -236,6 +241,13 @@ proto.FortuneRequest.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -254,6 +266,42 @@ proto.FortuneRequest.prototype.getUserid = function() {
  */
 proto.FortuneRequest.prototype.setUserid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional string exchange = 2;
+ * @return {string}
+ */
+proto.FortuneRequest.prototype.getExchange = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.FortuneRequest} returns this
+ */
+proto.FortuneRequest.prototype.setExchange = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.FortuneRequest} returns this
+ */
+proto.FortuneRequest.prototype.clearExchange = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.FortuneRequest.prototype.hasExchange = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -290,7 +338,8 @@ proto.Fortune.prototype.toObject = function(opt_includeInstance) {
 proto.Fortune.toObject = function(includeInstance, msg) {
   var f, obj = {
     userid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    fortune: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+    fortune: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    exchange: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -335,6 +384,10 @@ proto.Fortune.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readDouble());
       msg.setFortune(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExchange(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -378,6 +431,13 @@ proto.Fortune.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -414,6 +474,42 @@ proto.Fortune.prototype.getFortune = function() {
  */
 proto.Fortune.prototype.setFortune = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional string exchange = 3;
+ * @return {string}
+ */
+proto.Fortune.prototype.getExchange = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Fortune} returns this
+ */
+proto.Fortune.prototype.setExchange = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.Fortune} returns this
+ */
+proto.Fortune.prototype.clearExchange = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Fortune.prototype.hasExchange = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

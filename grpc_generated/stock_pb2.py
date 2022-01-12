@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bstock.proto\" \n\x0e\x46ortuneRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\"*\n\x07\x46ortune\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x0f\n\x07\x66ortune\x18\x02 \x01(\x01\"\x8e\x01\n\x10StockTransaction\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.StockTransactionType\x12\x14\n\x0c\x63urrencyPair\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x01\x12\r\n\x05price\x18\x05 \x01(\x01\x12\x10\n\x08\x65xchange\x18\x06 \x01(\t\";\n\x12TransactionRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x15\n\rtransactionId\x18\x02 \x01(\x04\"h\n\x14TransactionAckStatus\x12\x1a\n\rtransactionId\x18\x01 \x01(\x04H\x00\x88\x01\x01\x12\"\n\x06status\x18\x02 \x01(\x0e\x32\x12.TransactionStatusB\x10\n\x0e_transactionId*)\n\x14StockTransactionType\x12\x07\n\x03\x42UY\x10\x00\x12\x08\n\x04SELL\x10\x01*L\n\x11TransactionStatus\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x00\x12\x0c\n\x08REJECTED\x10\x01\x12\x0c\n\x08REALISED\x10\x02\x12\r\n\tCANCELLED\x10\x03\x32\xab\x02\n\x11StockCommunicator\x12\"\n\nAddFortune\x12\x08.Fortune\x1a\x08.Fortune\"\x00\x12)\n\nGetFortune\x12\x0f.FortuneRequest\x1a\x08.Fortune\"\x00\x12<\n\x0e\x41\x64\x64Transaction\x12\x11.StockTransaction\x1a\x15.TransactionAckStatus\"\x00\x12\x41\n\x11\x43\x61ncelTransaction\x12\x13.TransactionRequest\x1a\x15.TransactionAckStatus\"\x00\x12\x46\n\x16\x43heckTransactionStatus\x12\x13.TransactionRequest\x1a\x15.TransactionAckStatus\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0bstock.proto\"D\n\x0e\x46ortuneRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x15\n\x08\x65xchange\x18\x02 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_exchange\"N\n\x07\x46ortune\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x0f\n\x07\x66ortune\x18\x02 \x01(\x01\x12\x15\n\x08\x65xchange\x18\x03 \x01(\tH\x00\x88\x01\x01\x42\x0b\n\t_exchange\"\x8e\x01\n\x10StockTransaction\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12#\n\x04type\x18\x02 \x01(\x0e\x32\x15.StockTransactionType\x12\x14\n\x0c\x63urrencyPair\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\x01\x12\r\n\x05price\x18\x05 \x01(\x01\x12\x10\n\x08\x65xchange\x18\x06 \x01(\t\";\n\x12TransactionRequest\x12\x0e\n\x06userId\x18\x01 \x01(\x04\x12\x15\n\rtransactionId\x18\x02 \x01(\x04\"h\n\x14TransactionAckStatus\x12\x1a\n\rtransactionId\x18\x01 \x01(\x04H\x00\x88\x01\x01\x12\"\n\x06status\x18\x02 \x01(\x0e\x32\x12.TransactionStatusB\x10\n\x0e_transactionId*)\n\x14StockTransactionType\x12\x07\n\x03\x42UY\x10\x00\x12\x08\n\x04SELL\x10\x01*L\n\x11TransactionStatus\x12\x0c\n\x08\x41\x43\x43\x45PTED\x10\x00\x12\x0c\n\x08REJECTED\x10\x01\x12\x0c\n\x08REALISED\x10\x02\x12\r\n\tCANCELLED\x10\x03\x32\xab\x02\n\x11StockCommunicator\x12\"\n\nAddFortune\x12\x08.Fortune\x1a\x08.Fortune\"\x00\x12)\n\nGetFortune\x12\x0f.FortuneRequest\x1a\x08.Fortune\"\x00\x12<\n\x0e\x41\x64\x64Transaction\x12\x11.StockTransaction\x1a\x15.TransactionAckStatus\"\x00\x12\x41\n\x11\x43\x61ncelTransaction\x12\x13.TransactionRequest\x1a\x15.TransactionAckStatus\"\x00\x12\x46\n\x16\x43heckTransactionStatus\x12\x13.TransactionRequest\x1a\x15.TransactionAckStatus\"\x00\x62\x06proto3'
 )
 
 _STOCKTRANSACTIONTYPE = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _STOCKTRANSACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=405,
-  serialized_end=446,
+  serialized_start=477,
+  serialized_end=518,
 )
 _sym_db.RegisterEnumDescriptor(_STOCKTRANSACTIONTYPE)
 
@@ -79,8 +79,8 @@ _TRANSACTIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=448,
-  serialized_end=524,
+  serialized_start=520,
+  serialized_end=596,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSACTIONSTATUS)
 
@@ -109,6 +109,13 @@ _FORTUNEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='FortuneRequest.exchange', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -120,9 +127,14 @@ _FORTUNEREQUEST = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='_exchange', full_name='FortuneRequest._exchange',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=15,
-  serialized_end=47,
+  serialized_end=83,
 )
 
 
@@ -148,6 +160,13 @@ _FORTUNE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='Fortune.exchange', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -159,9 +178,14 @@ _FORTUNE = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
+    _descriptor.OneofDescriptor(
+      name='_exchange', full_name='Fortune._exchange',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=49,
-  serialized_end=91,
+  serialized_start=85,
+  serialized_end=163,
 )
 
 
@@ -227,8 +251,8 @@ _STOCKTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=94,
-  serialized_end=236,
+  serialized_start=166,
+  serialized_end=308,
 )
 
 
@@ -266,8 +290,8 @@ _TRANSACTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=238,
-  serialized_end=297,
+  serialized_start=310,
+  serialized_end=369,
 )
 
 
@@ -310,10 +334,16 @@ _TRANSACTIONACKSTATUS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=299,
-  serialized_end=403,
+  serialized_start=371,
+  serialized_end=475,
 )
 
+_FORTUNEREQUEST.oneofs_by_name['_exchange'].fields.append(
+  _FORTUNEREQUEST.fields_by_name['exchange'])
+_FORTUNEREQUEST.fields_by_name['exchange'].containing_oneof = _FORTUNEREQUEST.oneofs_by_name['_exchange']
+_FORTUNE.oneofs_by_name['_exchange'].fields.append(
+  _FORTUNE.fields_by_name['exchange'])
+_FORTUNE.fields_by_name['exchange'].containing_oneof = _FORTUNE.oneofs_by_name['_exchange']
 _STOCKTRANSACTION.fields_by_name['type'].enum_type = _STOCKTRANSACTIONTYPE
 _TRANSACTIONACKSTATUS.fields_by_name['status'].enum_type = _TRANSACTIONSTATUS
 _TRANSACTIONACKSTATUS.oneofs_by_name['_transactionId'].fields.append(
@@ -372,8 +402,8 @@ _STOCKCOMMUNICATOR = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=527,
-  serialized_end=826,
+  serialized_start=599,
+  serialized_end=898,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddFortune',
